@@ -950,69 +950,111 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       })
       S4D_WEBSITECREATION_EXPRESS_app.use(function(req, res) {
           S4D_APP_write.sync(String('404.html'), String(`<!DOCTYPE html>
-        <html lang="en">
+        <html lang="fr">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>404 Tu es au mauvais endroit !</title>
+            <title>Oups ! Page introuvable - Animal Crossing Community</title>
+            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/animal-crossing/refs/heads/main/image.png">
+    
             <style>
+                :root {
+                    --ac-green: #7de2b9;
+                    --ac-cream: #fbf8e8;
+                    --ac-brown: #5c483a;
+                    --ac-blue: #59c1e7;
+                    --ac-orange: #f2a477;
+                }
+    
                 body {
-                    font-family: Arial, sans-serif;
-                    background-color: #f4f4f4;
-                    color: #333;
                     margin: 0;
+                    padding: 0;
+                    font-family: 'Verdana', 'Segoe UI', sans-serif;
+                    background-color: var(--ac-cream);
+                    color: var(--ac-brown);
                     display: flex;
-                    justify-content: center;
                     align-items: center;
+                    justify-content: center;
                     height: 100vh;
                     text-align: center;
+                    background-image: radial-gradient(#e8e3c5 15%, transparent 16%), radial-gradient(#e8e3c5 15%, transparent 16%);
+                    background-size: 60px 60px;
+                    background-position: 0 0, 30px 30px;
                 }
+    
                 .container {
-                    padding: 2rem;
-                    background: #fff;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    background: white;
+                    padding: 40px;
+                    border-radius: 30px;
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                    border: 5px solid var(--ac-green);
                     max-width: 500px;
-                    width: 90%;
+                    margin: 20px;
                 }
-                h1 {
+    
+                .error-code {
                     font-size: 5rem;
+                    font-weight: bold;
+                    color: var(--ac-orange);
                     margin: 0;
-                    color: #d9534f;
+                    line-height: 1;
                 }
+    
+                .icon {
+                    font-size: 4rem;
+                    margin: 20px 0;
+                }
+    
                 h2 {
-                    font-size: 1.5rem;
+                    color: var(--ac-green-dark);
                     margin-top: 0;
-                    margin-bottom: 1rem;
                 }
+    
                 p {
-                    font-size: 1rem;
-                    margin-bottom: 2rem;
+                    font-size: 1.1rem;
+                    margin-bottom: 30px;
                 }
-                .button {
+    
+                .back-button {
                     display: inline-block;
-                    padding: 10px 20px;
-                    font-size: 1rem;
-                    color: #fff;
-                    background-color: #5cb85c;
+                    background-color: var(--ac-brown);
+                    color: white;
+                    padding: 12px 25px;
                     text-decoration: none;
-                    border-radius: 5px;
-                    transition: background-color 0.3s ease;
+                    border-radius: 25px;
+                    font-weight: bold;
+                    transition: transform 0.2s;
+                    border: 3px solid white;
+                    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
                 }
-                .button:hover {
-                    background-color: #4cae4c;
+    
+                .back-button:hover {
+                    transform: scale(1.05);
+                    background-color: var(--ac-green);
+                }
+    
+                /* Petit clin d'œil à Resetti */
+                .resetti-quote {
+                    font-style: italic;
+                    font-size: 0.8rem;
+                    margin-top: 20px;
+                    color: #aaa;
                 }
             </style>
         </head>
         <body>
+    
             <div class="container">
-                <h1>404</h1>
-                <h2>Page non trouvée</h2>
-                <p>
-                    Désolé, la page que vous recherchez est introuvable. Il se peut qu'elle ait été supprimée ou que son nom ait changé.
-                </p>
-                <a href="https://botttttte.onrender.com/" class="button">Homrpage</a>
+                <div class="error-code">404</div>
+                <div class="icon">🚧</div>
+                <h2>Oh non ! Resetti est passé par là...</h2>
+                <p>Il semblerait que cette page ait été enterrée ou qu'elle n'ait jamais existé sur notre île.</p>
+    
+                <a href="/" class="back-button">🏠 Retourner à l'accueil</a>
+    
+                <p class="resetti-quote">"Et ne quitte pas sans sauvegarder la prochaine fois !"</p>
             </div>
+    
         </body>
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('404.html')))
     
