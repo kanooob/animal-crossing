@@ -328,9 +328,12 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
           S4D_APP_write.sync(String('home.html'), String(`<!DOCTYPE html>
         <html lang="fr">
         <head>
+            <meta name="google-site-verification" content="u2mt1kkF8HLYxuULsxpdU7e8dJKFjj0ItJ6IPLcs23s" />
+    
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Bienvenue sur Animal Crossing Community</title>
+    
             <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/animal-crossing/refs/heads/main/image.png">
     
             <style>
@@ -473,7 +476,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     border-top: 5px solid var(--ac-green);
                 }
     
-                /* Style du lien de statut */
                 .status-link {
                     display: inline-block;
                     margin-top: 15px;
