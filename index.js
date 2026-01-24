@@ -95,7 +95,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     s4d.database = new Database('./database.json')
 
     // blockly code
-    var temps_on, id_role_maintenance, membres_debut_jour, temps_on_min, id_role_mute, membre_parti, membre_nouveau, id_salon_log, temps_avant_bump, id_serveur, temps_on_beau, Aujourd_hui, nombre_starboard, id_salon_bienvenu, anecdote_1, id_role_modo, temps_on_court, heure_temps_on, id_salon_sanction, temps_on_jour, ann_C3_A9e;
+    var temps_on, id_role_maintenance, membres_debut_jour, temps_on_min, id_role_mute, membre_parti, membre_nouveau, id_salon_log, temps_avant_bump, id_serveur, temps_on_beau, Aujourd_hui, nombre_starboard, id_salon_bienvenu, id_role_modo, temps_on_court, anecdote_1, heure_temps_on, id_salon_sanction, temps_on_jour, ann_C3_A9e;
     
     
     eventEmitter.on('jour', async => {
@@ -104,7 +104,9 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       membre_nouveau = 0;
       membre_parti = 0;
       Aujourd_hui = ((new Date().getDate()));
-      anecdote_1 = 0;
+      if (anecdote_1 == 1 || ((new Date().getDate())) % 5 === 0) {
+        anecdote_1 = 0;
+      }
     
       });
     
@@ -185,11 +187,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
       });
     
-    eventEmitter.on('anectdote', async => {
-          s4d.client.channels.cache.get('1456601685760938077').permissionOverwrites.edit(((s4d.client.guilds.cache.get(id_serveur)).roles.cache.get('1199727151721746555')), { SEND_MESSAGES: true });s4d.client.channels.cache.get('1456601685760938077').send({content:String('C\'est l\'heure de l\'<@&1456604350536220745> !')});
-    
-      });
-    
     await s4d.client.login((process.env[String('TOKEN')])).catch((e) => {
             const tokenInvalid = true;
             const tokenError = e;
@@ -199,6 +196,11 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                 throw new Error("Privileged Gateway Intents are not enabled! Please go to https://discord.com/developers and turn on all of them.")
             }
         });
+    
+    eventEmitter.on('anectdote', async => {
+          s4d.client.channels.cache.get('1456601685760938077').permissionOverwrites.edit(((s4d.client.guilds.cache.get(id_serveur)).roles.cache.get('1199727151721746555')), { SEND_MESSAGES: true });s4d.client.channels.cache.get('1456601685760938077').send({content:String('C\'est l\'heure de l\'<@&1456604350536220745> !')});
+    
+      });
     
     s4d.client.on('ready', async () => {
       id_role_maintenance = '1305546306399244399';
@@ -222,7 +224,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       membre_parti = 0;
       Aujourd_hui = ((new Date().getDate()));
       temps_avant_bump = 120;
-      anecdote_1 = 0;
+      anecdote_1 = 1;
       S4D_APP_PKG_axios({
               method: "get",
               url: (process.env[String('render_bot_2')]),
@@ -299,40 +301,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       		options: [
     
           ]
-      },{
-          name: 'maintenance-on',
-      		description: 'maintenance',
-      		options: [
-              {
-            type: 3,
-        	name: 'raison',
-            required: true,
-        	description: 'Pouquoi ?',
-            choices: [
-    
-            ]
-        },
-          ]
-      },{
-          name: 'maintenance-off',
-      		description: 'arrête la maintenance',
-      		options: [
-    
-          ]
-      },{
-          name: 'report',
-      		description: 'Signaler un message problématique au staff',
-      		options: [
-              {
-            type: 3,
-        	name: 'lien',
-            required: true,
-        	description: 'Le lien message problematique',
-            choices: [
-    
-            ]
-        },
-          ]
       },
     ],{
         debug: false,
@@ -357,62 +325,217 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
       })
       S4D_WEBSITECREATION_EXPRESS_app.all('/', async function(req, res) {
-          S4D_APP_write.sync(String('home.html'), String(`<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-        <html>
+          S4D_APP_write.sync(String('home.html'), String(([`<!DOCTYPE html>
+        <html lang="fr">
         <head>
-        <title>~~==Bienvenue sur Ma Super Page Web!==~~</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta property="og:image" content="https://raw.githubusercontent.com/kanooob/animal-crossing/refs/heads/main/image.png">
+            <title>Bienvenue sur Animal Crossing - Le Serveur Animal Crossing</title>
+            <style>
+                /* --- CONFIGURATION GÉNÉRALE & COULEURS --- */
+                :root {
+                    --ac-green: #7de2b9; /* Vert menthe Animal Crossing */
+                    --ac-green-dark: #4eb68e;
+                    --ac-cream: #fbf8e8; /* Fond crème */
+                    --ac-brown: #5c483a; /* Couleur du texte (bois) */
+                    --ac-yellow: #f8e285; /* Jaune clochette */
+                    --ac-blue: #59c1e7; /* Bleu Dodo Airlines */
+                }
+    
+                body {
+                    margin: 0;
+                    padding: 0;
+                    font-family: 'Verdana', 'Segoe UI', sans-serif; /* Police ronde et simple */
+                    background-color: var(--ac-cream);
+                    color: var(--ac-brown);
+                    line-height: 1.6;
+                    background-image: radial-gradient(#e8e3c5 15%, transparent 16%), radial-gradient(#e8e3c5 15%, transparent 16%);
+                    background-size: 60px 60px;
+                    background-position: 0 0, 30px 30px;
+                }
+    
+                /* --- EN-TÊTE (HEADER) --- */
+                header {
+                    background-color: var(--ac-green);
+                    padding: 20px;
+                    text-align: center;
+                    border-bottom: 5px solid white;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                }
+    
+                h1 {
+                    margin: 0;
+                    font-size: 2.5rem;
+                    color: white;
+                    text-shadow: 2px 2px 0px var(--ac-brown);
+                }
+    
+                /* --- SECTION HÉROS (ACCUEIL) --- */
+                .hero {
+                    text-align: center;
+                    padding: 60px 20px;
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+    
+                .hero h2 {
+                    font-size: 2rem;
+                    color: var(--ac-blue);
+                }
+    
+                .cta-button {
+                    display: inline-block;
+                    background-color: var(--ac-brown);
+                    color: white;
+                    padding: 15px 30px;
+                    font-size: 1.2rem;
+                    text-decoration: none;
+                    border-radius: 30px;
+                    margin-top: 20px;
+                    transition: transform 0.2s, background-color 0.2s;
+                    border: 3px solid white;
+                    box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+                }
+    
+                .cta-button:hover {
+                    transform: translateY(-2px);
+                    background-color: #7a604d;
+                }
+    
+                .cta-button:active {
+                    transform: translateY(2px);
+                    box-shadow: none;
+                }
+    
+                /* --- CARTES DE CONTENU --- */
+                .features {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 20px;
+                    padding: 40px 20px;
+                    max-width: 1000px;
+                    margin: 0 auto;
+                }
+    
+                .card {
+                    background: white;
+                    border-radius: 20px;
+                    padding: 30px;
+                    width: 300px;
+                    text-align: center;
+                    box-shadow: 0 4px 10px rgba(92, 72, 58, 0.1);
+                    border: 2px solid var(--ac-green);
+                }
+    
+                .card-icon {
+                    font-size: 3rem;
+                    margin-bottom: 10px;
+                }
+    
+                .card h3 {
+                    color: var(--ac-green-dark);
+                }
+    
+                /* --- JEUX LISTÉS --- */
+                .games-list {
+                    background-color: var(--ac-blue);
+                    color: white;
+                    padding: 40px 20px;
+                    text-align: center;
+                    border-radius: 20px;
+                    margin: 20px;
+                    border: 4px solid white;
+                }
+    
+                .games-grid {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 15px;
+                    margin-top: 20px;
+                }
+    
+                .game-badge {
+                    background: rgba(255,255,255,0.2);
+                    padding: 10px 20px;
+                    border-radius: 15px;
+                    font-weight: bold;
+                }
+    
+                /* --- PIED DE PAGE --- */
+                footer {
+                    text-align: center;
+                    padding: 30px;
+                    font-size: 0.9rem;
+                    color: #888;
+                    background-color: white;
+                    margin-top: 50px;
+                }
+    
+                /* --- MOBILE --- */
+                @media (max-width: 600px) {
+                    h1 { font-size: 1.8rem; }
+                    .card { width: 100%; }
+                }
+            </style>
         </head>
+        <body>
     
-        <body bgcolor="#000080" text="#FFFFFF" link="#FFFF00" vlink="#FF00FF" alink="#FF0000" background="https://www.gwenael.org/IMG/jpg/informatique-texture-fond-ecran-bleu.jpg">
+            <header>
+                <h1>🍃 Animal Crossing Community 🍃</h1>
+            </header>
     
-        <table width="760" border="1" align="center" cellpadding="10" cellspacing="0" bgcolor="#000033">
-          <tr>
-            <td colspan="2">
-              <h1 align="center">
-                <font face="Comic Sans MS, cursive" color="#00FF00" size="+4">
-                  ~~==** Bienvenue sur Mon Super Site Perso !! **==~~
-                </font>
-              </h1>
+            <section class="hero">
+                <h2>Bienvenue sur votre nouvelle île !</h2>
+                <p>
+                    Rejoignez notre communauté francophone bienveillante dédiée à l'univers d'Animal Crossing.
+                    Que vous soyez un vétéran ou un nouveau résident, nos portes sont ouvertes !
+                </p>
     
-            </td>
-          </tr>
-          <tr valign="top">
-            <td width="150" bgcolor="#333399">
-              <p><font face="Arial, Helvetica, sans-serif" size="-1"><b><u>Menu Principal</u></b></font></p>
-              <ul>
-                <li><a href="https://botttttte.onrender.com/ping">Ping du bot</a></li>
-                <li><a href="https://botttttte.onrender.com/on">Temps allumé</a></li>
-                <li><a href="https://botttttte.onrender.com/nitro">Nitro</a></li>
-                <li><a href="https://botttttte.onrender.com/51966">51966</a></li>
-                <li><a href="https://botttttte.onrender.com/discord">Discord</a></li>
-                <li><a href="https://botttttte.onrender.com/heures">L'heure</a></li>
-                <li><a href="https://botttttte.onrender.com/statut">Statut</a></li>
-              </ul>
-              <hr>
-              <p align="center">
-                <img src="https://i.gifer.com/origin/c8/c837651066d628833d74c83b7f141416_w200.gif" width="80">
-                <br>
-                <font size="-2" face="Courier New, Courier, mono">Mon site est optimisé pour Netscape Navigator 4.0 !</font>
-              </p>
-            </td>
-            <td width="610" bgcolor="#000066">
-              <h2><font face="Georgia, Times New Roman, Times, serif">Salut à tous les surfeurs du web !</font></h2>
-              <p><font face="Comic Sans MS, cursive">Bienvenue sur mon tout nouveau site perso. C'est ici que je vais partager avec vous toutes mes passions, mes photos de vacances et mes pensées les plus profondes. N'oubliez pas de laisser un petit mot dans mon livre d'or avant de partir !</font></p>
-              <p><font face="Comic Sans MS, cursive">Ce site est actuellement en construction, alors revenez souvent pour voir les nouveautés !</font></p>
-              <p align="center">
+                <a href="https://discord.com/invite/95twM4Rked" class="cta-button" target="_blank">
+                    ✈️ Rejoindre le Discord
+                </a>
+            </section>
     
-              </p>
-              <hr>
-              <h3><font face="Georgia, Times New Roman, Times, serif">Dernières nouvelles :</font></h3>
-              <marquee behavior="scroll" direction="left" scrollamount="4">
-                <font color="#FFFF00">*** GRANDE NOUVELLE : J'ai enfin eu une connexion 56k ! Le téléchargement va plus vite maintenant ! *** Prochainement : une section blagues ! ***</font>
-              </marquee>
-              <br>
-              <p align="center">
-                <font size="-1">2025</font><br>
-                <a href="mailto:monemail@aol.com">
-                  <img src="`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('home.html')))
+            <div class="features">
+                <div class="card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Pour tout le monde</h3>
+                    <p>Une ambiance inclusive, respectueuse et "chill". Pas de pression, juste du plaisir à partager notre passion.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎁</div>
+                    <h3>Échanges & Navets</h3>
+                    <p>Besoin de plans ? D'un bon taux de navets ? Ou simplement de visiter d'autres îles ? C'est ici que ça se passe !</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎮</div>
+                    <h3>Tous les opus</h3>
+                    <p>Nous avons des salons dédiés pour chaque jeu de la licence, pas seulement New Horizons !</p>
+                </div>
+            </div>
+    
+            <section class="games-list">
+                <h2>🏰 Salons disponibles pour :</h2>
+                <div class="games-grid">
+                    <span class="game-badge">New Horizons (Switch)</span>
+                    <span class="game-badge">New Leaf (3DS)</span>
+                    <span class="game-badge">Pocket Camp (Mobile)</span>
+                    <span class="game-badge">City Folk / Let's Go to the City (Wii)</span>
+                    <span class="game-badge">Wild World (DS)</span>
+                    <span class="game-badge">GameCube & N64</span>
+                </div>
+            </section>
+    
+            <footer>
+                <p>© 2024-`,(new Date().getFullYear()),` Animal Crossing Communauté - Site non officiel.</p>
+                <p>Animal Crossing est une marque déposée de Nintendo.</p>
+            </footer>
+    
+        </body>
+        </html>`].join(''))), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('home.html')))
     
       })
       S4D_WEBSITECREATION_EXPRESS_app.all('/on', async function(req, res) {
@@ -420,6 +543,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         <html lang="fr">
         <head>
             <meta charset="UTF-8">
+        <meta property="og:image" content="https://raw.githubusercontent.com/kanooob/animal-crossing/refs/heads/main/image.png">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Temps de fonctionnement du bot</title>
             <style>
@@ -488,7 +612,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         <body>
     
             <iframe
-                src="https://antoine.betteruptime.com"
+                src="https://animal-crossing.betteruptime.com/fr"
                 style="width: 100%; height: 100vh; border: none;">
             </iframe>
     
@@ -976,12 +1100,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: (['Pong 🏓','\n','-# Ma latence est de **',s4d.client.ws.ping,'**ms. Le bot est en ligne depuis **',temps_on_beau,'**.'].join('')), ephemeral: false, components: [] });
       }
       if ((interaction.commandName) == 'heures') {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1122,12 +1248,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: 'Message envoyé.', ephemeral: true, components: [] });
         (interaction.channel).send({content:String((interaction.options.getString('message')))});
       } else if ((interaction.commandName) == 'say' && ((interaction.member).id) != ((s4d.client.users.cache.get(String('746069923465527339'))).id)) {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1268,12 +1396,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: (['Le serveur **',(interaction.guild).name,'** créé par **',(s4d.client.users.cache.get(String((String((interaction.guild).ownerId))))).username,'** à **',(interaction.guild).memberCount,'** membres.','\n','-# Le serveur a était créé <t:',Math.floor(((interaction.guild).createdAt).getTime()/1000),':R>.'].join('')), ephemeral: false, components: [] });
       }
       if ((interaction.commandName) == 'help') {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1414,7 +1544,8 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
-        await interaction.reply({ content: '[Ma page de statut](https://botttttte.onrender.com/statut).', ephemeral: false, components: [] });
+        //
+        await interaction.reply({ content: '[Ma page de statut](https://animal-crossing.onrender.com/statut).', ephemeral: false, components: [] });
       }
       if ((interaction.commandName) == '51966') {
         // true - only the person who t=did the comamnd can see it
@@ -1487,391 +1618,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
-        await interaction.reply({ content: '[51966 c\'est pas par hasard !](https://botttttte.onrender.com/51966)', ephemeral: true, components: [] });
-      }
-      if ((interaction.commandName) == 'report') {
-        // true - only the person who t=did the comamnd can see it
         //
-        // false - everyone can see it
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        await interaction.reply({ content: ('Le message à été signalé au staff. ' + String(interaction.options.getString('lien'))), ephemeral: true, components: [] });
-        s4d.client.channels.cache.get('1275519873086259322').send({content:String(([interaction.member,' à signaler un message :',interaction.options.getString('lien')].join('')))});
-      }
-      if ((interaction.commandName) == 'maintenance-on') {
-        if ((interaction.member)._roles.includes((id_serveur.roles.cache.get(id_role_modo)).id)) {
-          id_salon_log.send({content:String((['Le serveurs est en maintenance car **',interaction.options.getString('raison'),'**.','\n','La maintenance à été activé par ',interaction.member,'**.'].join('')))});
-          // true - only the person who t=did the comamnd can see it
-          //
-          // false - everyone can see it
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          await interaction.reply({ content: 'maintenance activé...', ephemeral: false, components: [] });
-          s4d.database.set(String('maintenance'), 'on');
-          (interaction.guild).members.cache.forEach(async m =>{
-                     (m).roles.add(((interaction.guild).roles.cache.get(id_role_maintenance)));
-    
-                  })
-                  } else {
-          // true - only the person who t=did the comamnd can see it
-          //
-          // false - everyone can see it
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          await interaction.reply({ content: 'Tu n\'a pas la permission.', ephemeral: true, components: [] });
-        }
-      }
-      if ((interaction.commandName) == 'maintenance-off') {
-        if ((interaction.member)._roles.includes((id_serveur.roles.cache.get(id_role_modo)).id)) {
-          // true - only the person who t=did the comamnd can see it
-          //
-          // false - everyone can see it
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          await interaction.reply({ content: 'maintenance  off', ephemeral: false, components: [] });
-          s4d.database.set(String('maintenance'), 'off');
-          (interaction.guild).members.cache.forEach(async m =>{
-                     (m).roles.remove(((interaction.guild).roles.cache.get(id_role_maintenance)));
-    
-                  })
-                  } else {
-          // true - only the person who t=did the comamnd can see it
-          //
-          // false - everyone can see it
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          //
-          await interaction.reply({ content: 'Tu n\'a pas la permission.', ephemeral: true, components: [] });
-        }
+        await interaction.reply({ content: '[51966 c\'est pas par hasard !](https://animal-crossing.onrender.com/51966)', ephemeral: true, components: [] });
       }
       if ((interaction.commandName) == 'restart' && ((interaction.member).id) == '746069923465527339') {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1962,6 +1716,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //

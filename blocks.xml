@@ -14,9 +14,9 @@
     <variable id="|e=)HE.3GbQ$+mJ2T1R:">Aujourd'hui</variable>
     <variable id="Tt.|Re4?G${moO^#+^D.">nombre starboard</variable>
     <variable id="j95FixddFDNx?u#/7]~0">id salon bienvenu</variable>
-    <variable id=")0]MUf4=/VR7SND/6os;">anecdote 1</variable>
     <variable id="[12NyN|IX`/w]UTuwXGu">id role modo</variable>
     <variable id="uLc`}9vX.wiP13stI[sn">temps on court</variable>
+    <variable id=")0]MUf4=/VR7SND/6os;">anecdote 1</variable>
     <variable id=":kb@V:fcuU?;XP;BMa)k">heure temps on</variable>
     <variable id="SQ+BB*EQ[,#tafP.Be)N">id salon sanction</variable>
     <variable id="m#gEv9R:XvdH83rdRd}g">temps on jour</variable>
@@ -241,13 +241,56 @@
                           </block>
                         </value>
                         <next>
-                          <block type="variables_set" id="W==V^pjvx[K?vbE*lnpp">
-                            <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
-                            <value name="VALUE">
-                              <block type="math_number" id="7Ci4n`l/F!i[J_(-K]~I">
-                                <field name="NUM">0</field>
+                          <block type="controls_if" id="_1YO~LaZHe.~F$9:=!50">
+                            <value name="IF0">
+                              <block type="logic_operation" id="~jLOtjf`nRKX!{=#hy=J">
+                                <field name="OP">OR</field>
+                                <value name="A">
+                                  <block type="logic_compare" id="rmpvFNoHo3|+8PB5X[zX">
+                                    <field name="OP">EQ</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="jKQzWi%d#PkOA)hA=c4{">
+                                        <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="Al$H)a+T-OaP++~_:!ic">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number_property" id="n.gOLLFOVw7j34hoFLPi">
+                                    <mutation divisor_input="true"></mutation>
+                                    <field name="PROPERTY">DIVISIBLE_BY</field>
+                                    <value name="NUMBER_TO_CHECK">
+                                      <shadow type="math_number" id="aLte_8]l}5:*_d*F+0%R">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                      <block type="frost_current" id="gq27v1]`^7($n-v6vP?p">
+                                        <field name="DATA_TYPE">DATE</field>
+                                      </block>
+                                    </value>
+                                    <value name="DIVISOR">
+                                      <block type="math_number" id="kciW5u6w4{J-GZxsI1w)">
+                                        <field name="NUM">5</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
                               </block>
                             </value>
+                            <statement name="DO0">
+                              <block type="variables_set" id="W==V^pjvx[K?vbE*lnpp">
+                                <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="7Ci4n`l/F!i[J_(-K]~I">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
                           </block>
                         </next>
                       </block>
@@ -1245,6 +1288,20 @@
       </block>
     </statement>
   </block>
+  <block type="s4d_login" id="a(OJZs!O_2T_G4QesGc2" x="-2308" y="-2984">
+    <value name="TOKEN">
+      <shadow type="text" id="3ci/_5W2I@vyjRrQzeSF">
+        <field name="TEXT">Your bot token</field>
+      </shadow>
+      <block type="frost_env" id="G0|TYgS?Z-Z~hf3_u~x[">
+        <value name="VALUE">
+          <shadow type="text" id="p}3nLNF.%I8!C0*#G+*r">
+            <field name="TEXT">TOKEN</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+  </block>
   <block type="create_event" id="Y2X0a0^`E*4XNLdWI2@c" x="2928" y="-3217">
     <value name="NAME">
       <shadow type="text" id="6Lr;yq|55e}-VHOKPDjJ">
@@ -1306,20 +1363,6 @@
         </next>
       </block>
     </statement>
-  </block>
-  <block type="s4d_login" id="a(OJZs!O_2T_G4QesGc2" x="-2311" y="-2923">
-    <value name="TOKEN">
-      <shadow type="text" id="3ci/_5W2I@vyjRrQzeSF">
-        <field name="TEXT">Your bot token</field>
-      </shadow>
-      <block type="frost_env" id="G0|TYgS?Z-Z~hf3_u~x[">
-        <value name="VALUE">
-          <shadow type="text" id="p}3nLNF.%I8!C0*#G+*r">
-            <field name="TEXT">TOKEN</field>
-          </shadow>
-        </value>
-      </block>
-    </value>
   </block>
   <block type="s4d_on_connected" id="vAr8m%j;Z_0~y^.uIP[R" x="-1862" y="-2866">
     <statement name="STATEMENTS">
@@ -1504,7 +1547,7 @@
                                                                                             <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
                                                                                             <value name="VALUE">
                                                                                               <block type="math_number" id="6BLbOWg0zTc!xZA}Ts5D">
-                                                                                                <field name="NUM">0</field>
+                                                                                                <field name="NUM">1</field>
                                                                                               </block>
                                                                                             </value>
                                                                                             <next>
@@ -1694,88 +1737,6 @@
                                         <field name="TEXT">Voit par toi même</field>
                                       </shadow>
                                     </value>
-                                    <next>
-                                      <block type="frost_slash_command" id="xl%(7JZJXDe4!0YE_:ih">
-                                        <value name="NAME">
-                                          <shadow type="text" id="bwIgl?64%q//9MQ)*X@;">
-                                            <field name="TEXT">maintenance-on</field>
-                                          </shadow>
-                                        </value>
-                                        <value name="DESC">
-                                          <shadow type="text" id=")Rxy;q`rOG4Nye8EL4L`">
-                                            <field name="TEXT">maintenance</field>
-                                          </shadow>
-                                        </value>
-                                        <statement name="OPTIONS">
-                                          <block type="gsa_frost_slash_options" id="LTHX~#*/}q9:^H*DI;~E">
-                                            <field name="TYPE">3</field>
-                                            <value name="NAME">
-                                              <shadow type="text" id="nQ.k2]?P`T5mOEu=01U:">
-                                                <field name="TEXT">Raison</field>
-                                              </shadow>
-                                            </value>
-                                            <value name="DESC">
-                                              <shadow type="text" id="U6W@b/E^]KmvKCHxPJfY">
-                                                <field name="TEXT">Pouquoi ?</field>
-                                              </shadow>
-                                            </value>
-                                            <value name="REQUIRED">
-                                              <shadow type="logic_boolean" id="nqnLkJ%GHm_:~5eVI)ba">
-                                                <field name="BOOL">TRUE</field>
-                                              </shadow>
-                                            </value>
-                                          </block>
-                                        </statement>
-                                        <next>
-                                          <block type="frost_slash_command" id="Hqmn+{+;D!0Ac`A+85)F">
-                                            <value name="NAME">
-                                              <shadow type="text" id="$P_#^zcM_ktWR!]`nlL?">
-                                                <field name="TEXT">maintenance-off</field>
-                                              </shadow>
-                                            </value>
-                                            <value name="DESC">
-                                              <shadow type="text" id="u8+2yEbn0JR=@ou?W(FP">
-                                                <field name="TEXT">arrête la maintenance</field>
-                                              </shadow>
-                                            </value>
-                                            <next>
-                                              <block type="frost_slash_command" id="Cw$AK+:RAZvtijd|tc-N">
-                                                <value name="NAME">
-                                                  <shadow type="text" id="4vsj{$DyJ?|=P@h~+3:N">
-                                                    <field name="TEXT">report</field>
-                                                  </shadow>
-                                                </value>
-                                                <value name="DESC">
-                                                  <shadow type="text" id="e``S2WJeWP]aw:QVMWp#">
-                                                    <field name="TEXT">Signaler un message problématique au staff</field>
-                                                  </shadow>
-                                                </value>
-                                                <statement name="OPTIONS">
-                                                  <block type="gsa_frost_slash_options" id="?Ubi5/NW]LU.9jowkTa,">
-                                                    <field name="TYPE">3</field>
-                                                    <value name="NAME">
-                                                      <shadow type="text" id="mav)I_4b+.X4Xj@Z~V?P">
-                                                        <field name="TEXT">lien</field>
-                                                      </shadow>
-                                                    </value>
-                                                    <value name="DESC">
-                                                      <shadow type="text" id="O.elRj^]-%`_!V3A%jZP">
-                                                        <field name="TEXT">Le lien message problematique</field>
-                                                      </shadow>
-                                                    </value>
-                                                    <value name="REQUIRED">
-                                                      <shadow type="logic_boolean" id="*oAkoe.Q:MJ{TiPO)a6j">
-                                                        <field name="BOOL">TRUE</field>
-                                                      </shadow>
-                                                    </value>
-                                                  </block>
-                                                </statement>
-                                              </block>
-                                            </next>
-                                          </block>
-                                        </next>
-                                      </block>
-                                    </next>
                                   </block>
                                 </next>
                               </block>
@@ -1917,8 +1878,23 @@
                       </block>
                     </value>
                     <value name="fileContent">
-                      <block type="jg_text_remake_paragraph_quotes" id="kf9`/m3:SpRZ[KywNC~k">
-                        <field name="TEXT">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;&amp;#10;&lt;html&gt;&amp;#10;&lt;head&gt;&amp;#10;&lt;title&gt;~~==Bienvenue sur Ma Super Page Web!==~~&lt;/title&gt;&amp;#10;&lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;&amp;#10;&lt;/head&gt;&amp;#10;&amp;#10;&lt;body bgcolor="#000080" text="#FFFFFF" link="#FFFF00" vlink="#FF00FF" alink="#FF0000" background="https://www.gwenael.org/IMG/jpg/informatique-texture-fond-ecran-bleu.jpg"&gt;&amp;#10;&amp;#10;&lt;table width="760" border="1" align="center" cellpadding="10" cellspacing="0" bgcolor="#000033"&gt;&amp;#10;  &lt;tr&gt;&amp;#10;    &lt;td colspan="2"&gt;&amp;#10;      &lt;h1 align="center"&gt;&amp;#10;        &lt;font face="Comic Sans MS, cursive" color="#00FF00" size="+4"&gt;&amp;#10;          ~~==** Bienvenue sur Mon Super Site Perso !! **==~~&amp;#10;        &lt;/font&gt;&amp;#10;      &lt;/h1&gt;&amp;#10;      &amp;#10;    &lt;/td&gt;&amp;#10;  &lt;/tr&gt;&amp;#10;  &lt;tr valign="top"&gt;&amp;#10;    &lt;td width="150" bgcolor="#333399"&gt;&amp;#10;      &lt;p&gt;&lt;font face="Arial, Helvetica, sans-serif" size="-1"&gt;&lt;b&gt;&lt;u&gt;Menu Principal&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;&amp;#10;      &lt;ul&gt;&amp;#10;        &lt;li&gt;&lt;a href="https://botttttte.onrender.com/ping"&gt;Ping du bot&lt;/a&gt;&lt;/li&gt;&amp;#10;        &lt;li&gt;&lt;a href="https://botttttte.onrender.com/on"&gt;Temps allumé&lt;/a&gt;&lt;/li&gt;&amp;#10;        &lt;li&gt;&lt;a href="https://botttttte.onrender.com/nitro"&gt;Nitro&lt;/a&gt;&lt;/li&gt;&amp;#10;        &lt;li&gt;&lt;a href="https://botttttte.onrender.com/51966"&gt;51966&lt;/a&gt;&lt;/li&gt;&amp;#10;        &lt;li&gt;&lt;a href="https://botttttte.onrender.com/discord"&gt;Discord&lt;/a&gt;&lt;/li&gt;&amp;#10;        &lt;li&gt;&lt;a href="https://botttttte.onrender.com/heures"&gt;L'heure&lt;/a&gt;&lt;/li&gt;&amp;#10;        &lt;li&gt;&lt;a href="https://botttttte.onrender.com/statut"&gt;Statut&lt;/a&gt;&lt;/li&gt;&amp;#10;      &lt;/ul&gt;&amp;#10;      &lt;hr&gt;&amp;#10;      &lt;p align="center"&gt;&amp;#10;        &lt;img src="https://i.gifer.com/origin/c8/c837651066d628833d74c83b7f141416_w200.gif" width="80"&gt;&amp;#10;        &lt;br&gt;&amp;#10;        &lt;font size="-2" face="Courier New, Courier, mono"&gt;Mon site est optimisé pour Netscape Navigator 4.0 !&lt;/font&gt;&amp;#10;      &lt;/p&gt;&amp;#10;    &lt;/td&gt;&amp;#10;    &lt;td width="610" bgcolor="#000066"&gt;&amp;#10;      &lt;h2&gt;&lt;font face="Georgia, Times New Roman, Times, serif"&gt;Salut à tous les surfeurs du web !&lt;/font&gt;&lt;/h2&gt;&amp;#10;      &lt;p&gt;&lt;font face="Comic Sans MS, cursive"&gt;Bienvenue sur mon tout nouveau site perso. C'est ici que je vais partager avec vous toutes mes passions, mes photos de vacances et mes pensées les plus profondes. N'oubliez pas de laisser un petit mot dans mon livre d'or avant de partir !&lt;/font&gt;&lt;/p&gt;&amp;#10;      &lt;p&gt;&lt;font face="Comic Sans MS, cursive"&gt;Ce site est actuellement en construction, alors revenez souvent pour voir les nouveautés !&lt;/font&gt;&lt;/p&gt;&amp;#10;      &lt;p align="center"&gt;&amp;#10;        &amp;#10;      &lt;/p&gt;&amp;#10;      &lt;hr&gt;&amp;#10;      &lt;h3&gt;&lt;font face="Georgia, Times New Roman, Times, serif"&gt;Dernières nouvelles :&lt;/font&gt;&lt;/h3&gt;&amp;#10;      &lt;marquee behavior="scroll" direction="left" scrollamount="4"&gt;&amp;#10;        &lt;font color="#FFFF00"&gt;*** GRANDE NOUVELLE : J'ai enfin eu une connexion 56k ! Le téléchargement va plus vite maintenant ! *** Prochainement : une section blagues ! ***&lt;/font&gt;&amp;#10;      &lt;/marquee&gt;&amp;#10;      &lt;br&gt;&amp;#10;      &lt;p align="center"&gt;&amp;#10;        &lt;font size="-1"&gt;2025&lt;/font&gt;&lt;br&gt;&amp;#10;        &lt;a href="mailto:monemail@aol.com"&gt;&amp;#10;          &lt;img src="</field>
+                      <block type="text_join" id="EvKzu+mM?[t}+|1mNH*8">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="jg_text_remake_paragraph_quotes" id="kf9`/m3:SpRZ[KywNC~k">
+                            <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="fr"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10; &lt;meta property="og:image" content="https://raw.githubusercontent.com/kanooob/animal-crossing/refs/heads/main/image.png"&gt;&amp;#10;    &lt;title&gt;Bienvenue sur Animal Crossing - Le Serveur Animal Crossing&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        /* --- CONFIGURATION GÉNÉRALE &amp; COULEURS --- */&amp;#10;        :root {&amp;#10;            --ac-green: #7de2b9; /* Vert menthe Animal Crossing */&amp;#10;            --ac-green-dark: #4eb68e;&amp;#10;            --ac-cream: #fbf8e8; /* Fond crème */&amp;#10;            --ac-brown: #5c483a; /* Couleur du texte (bois) */&amp;#10;            --ac-yellow: #f8e285; /* Jaune clochette */&amp;#10;            --ac-blue: #59c1e7; /* Bleu Dodo Airlines */&amp;#10;        }&amp;#10;&amp;#10;        body {&amp;#10;            margin: 0;&amp;#10;            padding: 0;&amp;#10;            font-family: 'Verdana', 'Segoe UI', sans-serif; /* Police ronde et simple */&amp;#10;            background-color: var(--ac-cream);&amp;#10;            color: var(--ac-brown);&amp;#10;            line-height: 1.6;&amp;#10;            background-image: radial-gradient(#e8e3c5 15%, transparent 16%), radial-gradient(#e8e3c5 15%, transparent 16%);&amp;#10;            background-size: 60px 60px;&amp;#10;            background-position: 0 0, 30px 30px;&amp;#10;        }&amp;#10;&amp;#10;        /* --- EN-TÊTE (HEADER) --- */&amp;#10;        header {&amp;#10;            background-color: var(--ac-green);&amp;#10;            padding: 20px;&amp;#10;            text-align: center;&amp;#10;            border-bottom: 5px solid white;&amp;#10;            box-shadow: 0 4px 6px rgba(0,0,0,0.1);&amp;#10;        }&amp;#10;&amp;#10;        h1 {&amp;#10;            margin: 0;&amp;#10;            font-size: 2.5rem;&amp;#10;            color: white;&amp;#10;            text-shadow: 2px 2px 0px var(--ac-brown);&amp;#10;        }&amp;#10;&amp;#10;        /* --- SECTION HÉROS (ACCUEIL) --- */&amp;#10;        .hero {&amp;#10;            text-align: center;&amp;#10;            padding: 60px 20px;&amp;#10;            max-width: 800px;&amp;#10;            margin: 0 auto;&amp;#10;        }&amp;#10;&amp;#10;        .hero h2 {&amp;#10;            font-size: 2rem;&amp;#10;            color: var(--ac-blue);&amp;#10;        }&amp;#10;&amp;#10;        .cta-button {&amp;#10;            display: inline-block;&amp;#10;            background-color: var(--ac-brown);&amp;#10;            color: white;&amp;#10;            padding: 15px 30px;&amp;#10;            font-size: 1.2rem;&amp;#10;            text-decoration: none;&amp;#10;            border-radius: 30px;&amp;#10;            margin-top: 20px;&amp;#10;            transition: transform 0.2s, background-color 0.2s;&amp;#10;            border: 3px solid white;&amp;#10;            box-shadow: 0 4px 0 rgba(0,0,0,0.2);&amp;#10;        }&amp;#10;&amp;#10;        .cta-button:hover {&amp;#10;            transform: translateY(-2px);&amp;#10;            background-color: #7a604d;&amp;#10;        }&amp;#10;&amp;#10;        .cta-button:active {&amp;#10;            transform: translateY(2px);&amp;#10;            box-shadow: none;&amp;#10;        }&amp;#10;&amp;#10;        /* --- CARTES DE CONTENU --- */&amp;#10;        .features {&amp;#10;            display: flex;&amp;#10;            flex-wrap: wrap;&amp;#10;            justify-content: center;&amp;#10;            gap: 20px;&amp;#10;            padding: 40px 20px;&amp;#10;            max-width: 1000px;&amp;#10;            margin: 0 auto;&amp;#10;        }&amp;#10;&amp;#10;        .card {&amp;#10;            background: white;&amp;#10;            border-radius: 20px;&amp;#10;            padding: 30px;&amp;#10;            width: 300px;&amp;#10;            text-align: center;&amp;#10;            box-shadow: 0 4px 10px rgba(92, 72, 58, 0.1);&amp;#10;            border: 2px solid var(--ac-green);&amp;#10;        }&amp;#10;&amp;#10;        .card-icon {&amp;#10;            font-size: 3rem;&amp;#10;            margin-bottom: 10px;&amp;#10;        }&amp;#10;&amp;#10;        .card h3 {&amp;#10;            color: var(--ac-green-dark);&amp;#10;        }&amp;#10;&amp;#10;        /* --- JEUX LISTÉS --- */&amp;#10;        .games-list {&amp;#10;            background-color: var(--ac-blue);&amp;#10;            color: white;&amp;#10;            padding: 40px 20px;&amp;#10;            text-align: center;&amp;#10;            border-radius: 20px;&amp;#10;            margin: 20px;&amp;#10;            border: 4px solid white;&amp;#10;        }&amp;#10;&amp;#10;        .games-grid {&amp;#10;            display: flex;&amp;#10;            justify-content: center;&amp;#10;            flex-wrap: wrap;&amp;#10;            gap: 15px;&amp;#10;            margin-top: 20px;&amp;#10;        }&amp;#10;&amp;#10;        .game-badge {&amp;#10;            background: rgba(255,255,255,0.2);&amp;#10;            padding: 10px 20px;&amp;#10;            border-radius: 15px;&amp;#10;            font-weight: bold;&amp;#10;        }&amp;#10;&amp;#10;        /* --- PIED DE PAGE --- */&amp;#10;        footer {&amp;#10;            text-align: center;&amp;#10;            padding: 30px;&amp;#10;            font-size: 0.9rem;&amp;#10;            color: #888;&amp;#10;            background-color: white;&amp;#10;            margin-top: 50px;&amp;#10;        }&amp;#10;&amp;#10;        /* --- MOBILE --- */&amp;#10;        @media (max-width: 600px) {&amp;#10;            h1 { font-size: 1.8rem; }&amp;#10;            .card { width: 100%; }&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;&amp;#10;    &lt;header&gt;&amp;#10;        &lt;h1&gt;🍃 Animal Crossing Community 🍃&lt;/h1&gt;&amp;#10;    &lt;/header&gt;&amp;#10;&amp;#10;    &lt;section class="hero"&gt;&amp;#10;        &lt;h2&gt;Bienvenue sur votre nouvelle île !&lt;/h2&gt;&amp;#10;        &lt;p&gt;&amp;#10;            Rejoignez notre communauté francophone bienveillante dédiée à l'univers d'Animal Crossing.&amp;#10;            Que vous soyez un vétéran ou un nouveau résident, nos portes sont ouvertes !&amp;#10;        &lt;/p&gt;&amp;#10;        &amp;#10;        &lt;a href="https://discord.com/invite/95twM4Rked" class="cta-button" target="_blank"&gt;&amp;#10;            ✈️ Rejoindre le Discord&amp;#10;        &lt;/a&gt;&amp;#10;    &lt;/section&gt;&amp;#10;&amp;#10;    &lt;div class="features"&gt;&amp;#10;        &lt;div class="card"&gt;&amp;#10;            &lt;div class="card-icon"&gt;🤝&lt;/div&gt;&amp;#10;            &lt;h3&gt;Pour tout le monde&lt;/h3&gt;&amp;#10;            &lt;p&gt;Une ambiance inclusive, respectueuse et "chill". Pas de pression, juste du plaisir à partager notre passion.&lt;/p&gt;&amp;#10;        &lt;/div&gt;&amp;#10;        &lt;div class="card"&gt;&amp;#10;            &lt;div class="card-icon"&gt;🎁&lt;/div&gt;&amp;#10;            &lt;h3&gt;Échanges &amp; Navets&lt;/h3&gt;&amp;#10;            &lt;p&gt;Besoin de plans ? D'un bon taux de navets ? Ou simplement de visiter d'autres îles ? C'est ici que ça se passe !&lt;/p&gt;&amp;#10;        &lt;/div&gt;&amp;#10;        &lt;div class="card"&gt;&amp;#10;            &lt;div class="card-icon"&gt;🎮&lt;/div&gt;&amp;#10;            &lt;h3&gt;Tous les opus&lt;/h3&gt;&amp;#10;            &lt;p&gt;Nous avons des salons dédiés pour chaque jeu de la licence, pas seulement New Horizons !&lt;/p&gt;&amp;#10;        &lt;/div&gt;&amp;#10;    &lt;/div&gt;&amp;#10;&amp;#10;    &lt;section class="games-list"&gt;&amp;#10;        &lt;h2&gt;🏰 Salons disponibles pour :&lt;/h2&gt;&amp;#10;        &lt;div class="games-grid"&gt;&amp;#10;            &lt;span class="game-badge"&gt;New Horizons (Switch)&lt;/span&gt;&amp;#10;            &lt;span class="game-badge"&gt;New Leaf (3DS)&lt;/span&gt;&amp;#10;            &lt;span class="game-badge"&gt;Pocket Camp (Mobile)&lt;/span&gt;&amp;#10;            &lt;span class="game-badge"&gt;City Folk / Let's Go to the City (Wii)&lt;/span&gt;&amp;#10;            &lt;span class="game-badge"&gt;Wild World (DS)&lt;/span&gt;&amp;#10;            &lt;span class="game-badge"&gt;GameCube &amp; N64&lt;/span&gt;&amp;#10;        &lt;/div&gt;&amp;#10;    &lt;/section&gt;&amp;#10;&amp;#10;    &lt;footer&gt;&amp;#10;        &lt;p&gt;© 2024-</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="frost_current" id="IjG9L8yslY:@6G22Xlw$">
+                            <field name="DATA_TYPE">YEAR</field>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="jg_text_remake_paragraph_quotes" id="wX8))~(`Tk%v6H8#-MyT">
+                            <field name="TEXT"> Animal Crossing Communauté - Site non officiel.&lt;/p&gt;&amp;#10;        &lt;p&gt;Animal Crossing est une marque déposée de Nintendo.&lt;/p&gt;&amp;#10;    &lt;/footer&gt;&amp;#10;&amp;#10;&lt;/body&gt;&amp;#10;&lt;/html&gt;</field>
+                          </block>
+                        </value>
                       </block>
                     </value>
                     <next>
@@ -1953,7 +1929,7 @@
                             <mutation items="3"></mutation>
                             <value name="ADD0">
                               <block type="jg_text_remake_paragraph_quotes" id="q;uOc%9j}Pymcx#1agaH">
-                                <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="fr"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10;    &lt;title&gt;Temps de fonctionnement du bot&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        body {&amp;#10;            font-family: Arial, sans-serif;&amp;#10;            background-color: #f4f4f4;&amp;#10;            color: #333;&amp;#10;            display: flex;&amp;#10;            justify-content: center;&amp;#10;            align-items: center;&amp;#10;            height: 100vh;&amp;#10;            margin: 0;&amp;#10;            text-align: center;&amp;#10;        }&amp;#10;        .container {&amp;#10;            background-color: #fff;&amp;#10;            padding: 40px;&amp;#10;            border-radius: 10px;&amp;#10;            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);&amp;#10;        }&amp;#10;        h1 {&amp;#10;            color: #555;&amp;#10;            font-size: 1.5em;&amp;#10;        }&amp;#10;        .uptime-value {&amp;#10;            font-size: 3em;&amp;#10;            font-weight: bold;&amp;#10;            color: #28a745;&amp;#10;        }&amp;#10;        .unit {&amp;#10;            font-size: 1em;&amp;#10;            color: #777;&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;&amp;#10;    &lt;div class="container"&gt;&amp;#10;        &lt;h1&gt;Temps de fonctionnement du bot&lt;/h1&gt;&amp;#10;        &lt;p class="uptime-value"&gt;&amp;#10;&lt;/html&gt;</field>
+                                <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="fr"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;&lt;meta property="og:image" content="https://raw.githubusercontent.com/kanooob/animal-crossing/refs/heads/main/image.png"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10;    &lt;title&gt;Temps de fonctionnement du bot&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        body {&amp;#10;            font-family: Arial, sans-serif;&amp;#10;            background-color: #f4f4f4;&amp;#10;            color: #333;&amp;#10;            display: flex;&amp;#10;            justify-content: center;&amp;#10;            align-items: center;&amp;#10;            height: 100vh;&amp;#10;            margin: 0;&amp;#10;            text-align: center;&amp;#10;        }&amp;#10;        .container {&amp;#10;            background-color: #fff;&amp;#10;            padding: 40px;&amp;#10;            border-radius: 10px;&amp;#10;            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);&amp;#10;        }&amp;#10;        h1 {&amp;#10;            color: #555;&amp;#10;            font-size: 1.5em;&amp;#10;        }&amp;#10;        .uptime-value {&amp;#10;            font-size: 3em;&amp;#10;            font-weight: bold;&amp;#10;            color: #28a745;&amp;#10;        }&amp;#10;        .unit {&amp;#10;            font-size: 1em;&amp;#10;            color: #777;&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;&amp;#10;    &lt;div class="container"&gt;&amp;#10;        &lt;h1&gt;Temps de fonctionnement du bot&lt;/h1&gt;&amp;#10;        &lt;p class="uptime-value"&gt;&amp;#10;&lt;/html&gt;</field>
                               </block>
                             </value>
                             <value name="ADD1">
@@ -1997,7 +1973,7 @@
                             </value>
                             <value name="fileContent">
                               <block type="jg_text_remake_paragraph_quotes" id="LXTC|l?^h2?mP}.Y6VVc">
-                                <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="fr"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10;    &lt;title&gt;Statut&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        /* Styles pour que la page remplisse l'écran */&amp;#10;        body, html {&amp;#10;            margin: 0;&amp;#10;            padding: 0;&amp;#10;            height: 100%;&amp;#10;            overflow: hidden; /* Empêche les barres de défilement */&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;&amp;#10;    &lt;iframe &amp;#10;        src="https://antoine.betteruptime.com" &amp;#10;        style="width: 100%; height: 100vh; border: none;"&gt;&amp;#10;    &lt;/iframe&gt;&amp;#10;&amp;#10;&lt;/body&gt;&amp;#10;&lt;/html&gt;</field>
+                                <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="fr"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10;    &lt;title&gt;Statut&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        /* Styles pour que la page remplisse l'écran */&amp;#10;        body, html {&amp;#10;            margin: 0;&amp;#10;            padding: 0;&amp;#10;            height: 100%;&amp;#10;            overflow: hidden; /* Empêche les barres de défilement */&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;&amp;#10;    &lt;iframe &amp;#10;        src="https://animal-crossing.betteruptime.com/fr" &amp;#10;        style="width: 100%; height: 100vh; border: none;"&gt;&amp;#10;    &lt;/iframe&gt;&amp;#10;&amp;#10;&lt;/body&gt;&amp;#10;&lt;/html&gt;</field>
                               </block>
                             </value>
                             <next>
@@ -3618,6 +3594,7 @@ false - everyone can see it
                 
                 
                 
+                
                 </comment>
               </block>
             </value>
@@ -3807,6 +3784,7 @@ false - everyone can see it
                     
                     
                     
+                    
                     </comment>
                   </block>
                 </value>
@@ -3907,6 +3885,7 @@ false - everyone can see it
                 
                 
                     
+                        
                         
                         
                         
@@ -4084,6 +4063,7 @@ false - everyone can see it
                         
                         
                         
+                        
                         </comment>
                       </block>
                     </value>
@@ -4230,6 +4210,7 @@ false - everyone can see it
                     
                     
                         
+                            
                             
                             
                             
@@ -4448,6 +4429,7 @@ false - everyone can see it
                                 
                                 
                                 
+                                
                                 </comment>
                               </block>
                             </value>
@@ -4472,7 +4454,7 @@ false - everyone can see it
                               <block type="slash_reply" id="l2hldQ(w/G,j=nXPw;?U">
                                 <value name="CONTENT">
                                   <block type="text" id="=9?nzmj.[lW,[uvAY;4c">
-                                    <field name="TEXT">[Ma page de statut](https://botttttte.onrender.com/statut).</field>
+                                    <field name="TEXT">[Ma page de statut](https://animal-crossing.onrender.com/statut).</field>
                                   </block>
                                 </value>
                                 <value name="BOOLEAN">
@@ -4548,6 +4530,7 @@ false - everyone can see it
                                     
                                     
                                     
+                                    
                                     </comment>
                                   </block>
                                 </value>
@@ -4572,7 +4555,7 @@ false - everyone can see it
                                   <block type="slash_reply" id="H-4/CbY=B84Y!.e~=@*9">
                                     <value name="CONTENT">
                                       <block type="text" id="s/|R3DKWJ;lI[D9Kv,#D">
-                                        <field name="TEXT">[51966 c'est pas par hasard !](https://botttttte.onrender.com/51966)</field>
+                                        <field name="TEXT">[51966 c'est pas par hasard !](https://animal-crossing.onrender.com/51966)</field>
                                       </block>
                                     </value>
                                     <value name="BOOLEAN">
@@ -4648,51 +4631,59 @@ false - everyone can see it
                                         
                                         
                                         
+                                        
                                         </comment>
                                       </block>
                                     </value>
                                   </block>
                                 </statement>
                                 <next>
-                                  <block type="controls_if" id="y?0KJUm$1.PU^^Ty*Pf2">
+                                  <block type="controls_if" id="p^3,.DYx*I,#SC#|tfxT">
+                                    <mutation elseif="1"></mutation>
                                     <value name="IF0">
-                                      <block type="logic_compare" id="YP6[85*|Bb#ERj44HzqT">
-                                        <field name="OP">EQ</field>
+                                      <block type="logic_operation" id="Z@/MZ_6t!c78j_vNfu3H">
+                                        <field name="OP">AND</field>
                                         <value name="A">
-                                          <block type="interaction_name" id="4p{whD}-i;!bjPvY#zwo"></block>
+                                          <block type="logic_compare" id="~{tMvQ1zzQ:IQr{{E0Wx">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="interaction_name" id="i/u].((EE=^BJu?z:2M{"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="f%ES70ab{-Kr$YKoAV7G">
+                                                <field name="TEXT">restart</field>
+                                              </block>
+                                            </value>
+                                          </block>
                                         </value>
                                         <value name="B">
-                                          <block type="text" id="N!YBcsiMQcOV)vqbO/.B">
-                                            <field name="TEXT">report</field>
+                                          <block type="logic_compare" id="Ox?hxo3*8I)QB7U[2cP8">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="s4d_member_id" id=")zIJh|Dq}^m:ZVt]zZ`@">
+                                                <value name="MEMBER">
+                                                  <block type="interaction_author" id="d-Oi48qHlF2j;~6)eMMR"></block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="zx%YlJwq6dr*5zxZ^iTy">
+                                                <field name="TEXT">746069923465527339</field>
+                                              </block>
+                                            </value>
                                           </block>
                                         </value>
                                       </block>
                                     </value>
                                     <statement name="DO0">
-                                      <block type="slash_reply" id="$n!/43(c6dpzbKqGV~mW">
+                                      <block type="slash_reply" id="l?k{meewci(N3~8A,Szx">
                                         <value name="CONTENT">
-                                          <block type="text_join" id="qP*H1@^2Fe-+!nj40OOn">
-                                            <mutation items="2"></mutation>
-                                            <value name="ADD0">
-                                              <block type="jg_text_remake_paragraph_quotes" id="(l;^Doixew#5a$GOy;Ft">
-                                                <field name="TEXT">Le message à été signalé au staff. </field>
-                                              </block>
-                                            </value>
-                                            <value name="ADD1">
-                                              <block type="options" id="@K8i/@GB00;^^H=1PV~C">
-                                                <mutation mode="String" type="null"></mutation>
-                                                <field name="SEARCH">String</field>
-                                                <value name="BOOLEAN">
-                                                  <block type="text" id="jT^}{`FOtztZ:EpHF;C9">
-                                                    <field name="TEXT">lien</field>
-                                                  </block>
-                                                </value>
-                                              </block>
-                                            </value>
+                                          <block type="text" id="7_kPCJXZ_fS/hqZ]:_Tr">
+                                            <field name="TEXT">Redémarrage en cours...</field>
                                           </block>
                                         </value>
                                         <value name="BOOLEAN">
-                                          <block type="logic_boolean" id="PH,^qCV=d)a@p5wr3hjN">
+                                          <block type="logic_boolean" id="_$f97@Uq^Xbg4#,]PB-s">
                                             <field name="BOOL">TRUE</field>
                                             <comment pinned="false" h="128" w="265">true - only the person who t=did the comamnd can see it
 
@@ -4703,12 +4694,6 @@ false - everyone can see it
                 
                         
                         
-                    
-                    
-                    
-                    
-                    
-                        
                         
                             
                             
@@ -4723,948 +4708,230 @@ false - everyone can see it
                             
                             
                             
-                                
-                                
-                                
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                        
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                    
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
                                             </comment>
                                           </block>
                                         </value>
                                         <next>
-                                          <block type="s4d_send_channel" id="Yw4!CMyXPf/^T#tSr8D*">
-                                            <value name="CONTENT">
-                                              <block type="text_join" id="bIa|jP+|Oz7dwRWVE}kH">
-                                                <mutation items="3"></mutation>
-                                                <value name="ADD0">
-                                                  <block type="interaction_author" id="Xv:h6YtG|wN/vCUViaZv"></block>
-                                                </value>
-                                                <value name="ADD1">
-                                                  <block type="text" id="vQo#u`Jwd=GE.m]cj_k#">
-                                                    <field name="TEXT"> à signaler un message :</field>
-                                                  </block>
-                                                </value>
-                                                <value name="ADD2">
-                                                  <block type="options" id="k6]cS/47?NTkNfnD`O8N">
-                                                    <mutation mode="String" type="null"></mutation>
-                                                    <field name="SEARCH">String</field>
-                                                    <value name="BOOLEAN">
-                                                      <block type="text" id="?urOA:!f%~6/f8_J}9.Z">
-                                                        <field name="TEXT">lien</field>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </value>
-                                              </block>
-                                            </value>
-                                            <value name="CHANNEL">
-                                              <block type="s4d_get_channel" id="V);[[:=K6Yu5+,mS5`h=">
-                                                <field name="SEARCH_TYPE">ID</field>
+                                          <block type="jg_web_request_advanced_new2_send_request_to_url_using_method_with_result_giving_request_headers_with_data_sections_then_if_error" id="KMA7=T4TLyZ7IQNZ1#C/">
+                                            <field name="METHOD">"get"</field>
+                                            <field name="IMAGEORNOT"></field>
+                                            <value name="URL">
+                                              <block type="frost_env" id="b]^WFM!bjeVHg=ohz[X7">
                                                 <value name="VALUE">
-                                                  <block type="text" id="vIvfw;p8utOMDgwq}(n1">
-                                                    <field name="TEXT">1275519873086259322</field>
-                                                  </block>
+                                                  <shadow type="text" id="2l+f]5BO%p^aPEz=t;X$">
+                                                    <field name="TEXT">render</field>
+                                                  </shadow>
                                                 </value>
                                               </block>
                                             </value>
-                                          </block>
-                                        </next>
-                                      </block>
-                                    </statement>
-                                    <next>
-                                      <block type="controls_if" id="~({m6$gktX%Y0:w2ke[}">
-                                        <value name="IF0">
-                                          <block type="logic_compare" id=",.{,kL;KiQ^8uU?m-m:u">
-                                            <field name="OP">EQ</field>
-                                            <value name="A">
-                                              <block type="interaction_name" id="r2i!j__E:#?8WmZB7k-Z"></block>
-                                            </value>
-                                            <value name="B">
-                                              <block type="text" id="mI0r?@;IA]spnz/cD,|#">
-                                                <field name="TEXT">maintenance-on</field>
-                                              </block>
-                                            </value>
-                                          </block>
-                                        </value>
-                                        <statement name="DO0">
-                                          <block type="controls_if" id="KJz%A:yo)cFVlPP^ZGbb">
-                                            <mutation else="1"></mutation>
-                                            <value name="IF0">
-                                              <block type="s4d_has_role" id="A%t{N,|S}RPU2`)7w5GB">
-                                                <value name="MEMBER">
-                                                  <block type="interaction_author" id="fZE1@qha2j=u|sS.COwf"></block>
-                                                </value>
-                                                <value name="ROLE">
-                                                  <block type="s4d_get_role" id="bB$=v:D2#.I@=98)Ae/{">
-                                                    <field name="SEARCH_TYPE">ID</field>
-                                                    <value name="VALUE">
-                                                      <block type="variables_get" id="66@mhT~kGub^:,@?3Ec#">
-                                                        <field name="VAR" id="[12NyN|IX`/w]UTuwXGu">id role modo</field>
-                                                      </block>
-                                                    </value>
-                                                    <value name="SERVER">
-                                                      <block type="variables_get" id="Ri@2u$z=uY-=9y8l*C(D">
-                                                        <field name="VAR" id="QzK8w8zE)!P[I[Fn~9+|">id serveur</field>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </value>
-                                              </block>
-                                            </value>
-                                            <statement name="DO0">
-                                              <block type="s4d_send_channel" id=",_l5{#8YVJxo?7nRXIoP">
-                                                <value name="CONTENT">
-                                                  <block type="text_join" id="A1h}bH;6^9wLVD*BtOKM">
-                                                    <mutation items="7"></mutation>
-                                                    <value name="ADD0">
-                                                      <block type="text" id="n}M|]Y}z0zk5KIHtlDX(">
-                                                        <field name="TEXT">Le serveurs est en maintenance car **</field>
-                                                      </block>
-                                                    </value>
-                                                    <value name="ADD1">
-                                                      <block type="options" id="GKYFYG_LM`CzNi6fN=f[">
-                                                        <mutation mode="String" type="null"></mutation>
-                                                        <field name="SEARCH">String</field>
-                                                        <value name="BOOLEAN">
-                                                          <block type="text" id="JviFL^Q7R:`gK+-KiJ}2">
-                                                            <field name="TEXT">Raison</field>
-                                                          </block>
-                                                        </value>
-                                                      </block>
-                                                    </value>
-                                                    <value name="ADD2">
-                                                      <block type="text" id="s5:fLt?Z)!=O2PZOsPq_">
-                                                        <field name="TEXT">**.</field>
-                                                      </block>
-                                                    </value>
-                                                    <value name="ADD3">
-                                                      <block type="s4d_newline" id="~gPI?]y;)uxAq:Iiq:P_"></block>
-                                                    </value>
-                                                    <value name="ADD4">
-                                                      <block type="text" id="My#U4#QCMOX/pi!LD5bp">
-                                                        <field name="TEXT">La maintenance à été activé par </field>
-                                                      </block>
-                                                    </value>
-                                                    <value name="ADD5">
-                                                      <block type="interaction_author" id="j4~MP(cgZ1RXYtKcE/zb"></block>
-                                                    </value>
-                                                    <value name="ADD6">
-                                                      <block type="text" id="@R{~}Q7;R%GTg$O5,vkt">
-                                                        <field name="TEXT">**.</field>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </value>
-                                                <value name="CHANNEL">
-                                                  <block type="variables_get" id="NTpgyUj3g{ljrW`5esFP">
-                                                    <field name="VAR" id="c?=j8F)i#28M`P@Y5Y,m">id salon log</field>
+                                            <statement name="THEN">
+                                              <block type="s4d_print" id="hT3I:8jk3N~^7ef=yzP)">
+                                                <value name="PRINT">
+                                                  <block type="text" id="2JyzU$X?ME2xcfNqC,;.">
+                                                    <field name="TEXT">Redémarrage en cours...</field>
                                                   </block>
                                                 </value>
                                                 <next>
-                                                  <block type="slash_reply" id="eznN95cC%Qr9Xd66:|PG">
+                                                  <block type="s4d_send_channel" id="X5GGA/aP,hJRLPG*al}?">
                                                     <value name="CONTENT">
-                                                      <block type="text" id=")Kj8D5kI9.^Yc+S5Z]K@">
-                                                        <field name="TEXT">maintenance activé...</field>
+                                                      <block type="text" id=")HWfMyToJP/_?NNLqiL5">
+                                                        <field name="TEXT">Redémarrage en cours...(Commande /)</field>
                                                       </block>
                                                     </value>
-                                                    <value name="BOOLEAN">
-                                                      <block type="logic_boolean" id="MavEo}:z#.PJ[m/,!Pl{">
-                                                        <field name="BOOL">FALSE</field>
-                                                        <comment pinned="false" h="128" w="265">true - only the person who t=did the comamnd can see it
-
-false - everyone can see it
-                
-                
-                
-                
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                        
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                    
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        </comment>
-                                                      </block>
-                                                    </value>
-                                                    <next>
-                                                      <block type="s4d_set_data" id="$lvV)0SC)+j!^$AIvDE.">
-                                                        <value name="KEY">
-                                                          <shadow type="text" id="[ES)*YFH8fW2L8%)ql^$">
-                                                            <field name="TEXT">maintenance</field>
-                                                          </shadow>
-                                                        </value>
+                                                    <value name="CHANNEL">
+                                                      <block type="s4d_get_channel" id="6j4TPF4Jn4oKwI4*qR)S">
+                                                        <field name="SEARCH_TYPE">ID</field>
                                                         <value name="VALUE">
-                                                          <shadow type="text" id="ML]4DH#|V)`}]8LA?tm|">
-                                                            <field name="TEXT">on</field>
-                                                          </shadow>
-                                                        </value>
-                                                        <next>
-                                                          <block type="s4d_get_all" id="NL:96*F)a3SX9R[4ESCA">
-                                                            <value name="SERVER">
-                                                              <block type="interaction_guild" id="0H`o,v^9vf#Y,DPn}1J-"></block>
-                                                            </value>
-                                                            <statement name="THEN">
-                                                              <block type="s4d_add_role" id="=ejR)R!|6$!#s#L#L~|W">
-                                                                <value name="ROLE">
-                                                                  <block type="s4d_get_role" id="RCiz@J8MoD;8Z63+}S6;">
-                                                                    <field name="SEARCH_TYPE">ID</field>
-                                                                    <value name="VALUE">
-                                                                      <block type="variables_get" id="{HZ$rt8xsk5E7hP?r++b">
-                                                                        <field name="VAR" id="PfF*rP2yXF6[yox]e6zJ">id role maintenance</field>
-                                                                      </block>
-                                                                    </value>
-                                                                    <value name="SERVER">
-                                                                      <block type="interaction_guild" id="]u)]*UoGs|mHN9(0$SNZ"></block>
-                                                                    </value>
-                                                                  </block>
-                                                                </value>
-                                                                <value name="MEMBER">
-                                                                  <shadow type="s4d_message_member" id="T4Cr.*xnJ$(K[=yPk^^)"></shadow>
-                                                                  <block type="s4d_get_all_member" id="F3LSK*Mi=`?P#vJNUE-z"></block>
-                                                                </value>
-                                                              </block>
-                                                            </statement>
+                                                          <block type="text" id="76%q4OCzn=e:=lwd:M1L">
+                                                            <field name="TEXT">1413899996691955755</field>
                                                           </block>
-                                                        </next>
+                                                        </value>
                                                       </block>
-                                                    </next>
+                                                    </value>
                                                   </block>
                                                 </next>
                                               </block>
                                             </statement>
-                                            <statement name="ELSE">
-                                              <block type="slash_reply" id="683-Y,T=|-ek?Cnd/H50">
-                                                <value name="CONTENT">
-                                                  <block type="text" id="e}v2A62~yz9ZH+CX,naq">
-                                                    <field name="TEXT">Tu n'a pas la permission.</field>
-                                                  </block>
-                                                </value>
-                                                <value name="BOOLEAN">
-                                                  <block type="logic_boolean" id="3#iw{}{iwytM+=Y(#v5t">
-                                                    <field name="BOOL">TRUE</field>
-                                                    <comment pinned="false" h="128" w="265">true - only the person who t=did the comamnd can see it
-
-false - everyone can see it
-                
-                
-                
-                
-                        
-                        
-                    
-                    
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                    
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                                
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    </comment>
-                                                  </block>
+                                            <statement name="IF_ERROR">
+                                              <block type="s4d_print" id="/i~~WGNDk.P#D+poD8i0">
+                                                <value name="PRINT">
+                                                  <block type="frost_other_err" id="rWUpGaqX#Ii$A:plw;S,"></block>
                                                 </value>
                                               </block>
                                             </statement>
-                                          </block>
-                                        </statement>
-                                        <next>
-                                          <block type="controls_if" id="u0Ji`gl.i%|w/l]%DDD^">
-                                            <value name="IF0">
-                                              <block type="logic_compare" id="!CNOI-J?V569rV79dTyX">
-                                                <field name="OP">EQ</field>
-                                                <value name="A">
-                                                  <block type="interaction_name" id="oU/y]V44K[YYnx?[eruW"></block>
-                                                </value>
-                                                <value name="B">
-                                                  <block type="text" id="|`0sCIGb=okW-Ak-W81W">
-                                                    <field name="TEXT">maintenance-off</field>
-                                                  </block>
-                                                </value>
-                                              </block>
-                                            </value>
-                                            <statement name="DO0">
-                                              <block type="controls_if" id="NJ.3vjYFo%as%SVN,yDG">
-                                                <mutation else="1"></mutation>
-                                                <value name="IF0">
-                                                  <block type="s4d_has_role" id="bU|{?yuQ+V5IL4xv.=9H">
-                                                    <value name="MEMBER">
-                                                      <block type="interaction_author" id="z=LHtfR0;L3-{uZK!!Uj"></block>
-                                                    </value>
-                                                    <value name="ROLE">
-                                                      <block type="s4d_get_role" id="EJK`Yk04f`1uMIYFnG?I">
-                                                        <field name="SEARCH_TYPE">ID</field>
-                                                        <value name="VALUE">
-                                                          <block type="variables_get" id="wsV0^@RZ~kmSUWK9N1$l">
-                                                            <field name="VAR" id="[12NyN|IX`/w]UTuwXGu">id role modo</field>
-                                                          </block>
-                                                        </value>
-                                                        <value name="SERVER">
-                                                          <block type="variables_get" id="]-:-OFs8G5=X,;XWB*YK">
-                                                            <field name="VAR" id="QzK8w8zE)!P[I[Fn~9+|">id serveur</field>
-                                                          </block>
-                                                        </value>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </value>
-                                                <statement name="DO0">
-                                                  <block type="slash_reply" id="+:P3eAeC*Gkb;qwC6@11">
-                                                    <value name="CONTENT">
-                                                      <block type="text" id="G?(JQY]cS_/V-saimK#q">
-                                                        <field name="TEXT">maintenance  off</field>
-                                                      </block>
-                                                    </value>
-                                                    <value name="BOOLEAN">
-                                                      <block type="logic_boolean" id="GAv?*q3K~j,%M{NN[xB.">
-                                                        <field name="BOOL">FALSE</field>
-                                                        <comment pinned="false" h="128" w="265">true - only the person who t=did the comamnd can see it
-
-false - everyone can see it
-                
-                
-                
-                
-                        
-                        
-                        
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                        
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                    
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        </comment>
-                                                      </block>
-                                                    </value>
-                                                    <next>
-                                                      <block type="s4d_set_data" id="6-SXWq7yNoFQSh,JQREw">
-                                                        <value name="KEY">
-                                                          <shadow type="text" id="`r6A1rC5Q9uNWi3kwUQI">
-                                                            <field name="TEXT">maintenance</field>
-                                                          </shadow>
-                                                        </value>
-                                                        <value name="VALUE">
-                                                          <shadow type="text" id="`3Pnx198eMs]3K{NYd6q">
-                                                            <field name="TEXT">off</field>
-                                                          </shadow>
-                                                        </value>
-                                                        <next>
-                                                          <block type="s4d_get_all" id="i}x[cGt0Ef~-PpI-#ef|">
-                                                            <value name="SERVER">
-                                                              <block type="interaction_guild" id="{EB#x.FKQ/PX7M=Av:`Z"></block>
-                                                            </value>
-                                                            <statement name="THEN">
-                                                              <block type="s4d_remove_role" id="[P-Wf$^K%3?nKO4w)S+T">
-                                                                <value name="ROLE">
-                                                                  <block type="s4d_get_role" id="91/}3QXbG{oRLZ1o_ZU_">
-                                                                    <field name="SEARCH_TYPE">ID</field>
-                                                                    <value name="VALUE">
-                                                                      <block type="variables_get" id="GrXCZio.c:xnc}f4]#l?">
-                                                                        <field name="VAR" id="PfF*rP2yXF6[yox]e6zJ">id role maintenance</field>
-                                                                      </block>
-                                                                    </value>
-                                                                    <value name="SERVER">
-                                                                      <block type="interaction_guild" id=":HQHY4eeN%L}aFQ|vb_Y"></block>
-                                                                    </value>
-                                                                  </block>
-                                                                </value>
-                                                                <value name="MEMBER">
-                                                                  <shadow type="s4d_message_member" id="-m#ox7kxMQY@WGAtsmo)"></shadow>
-                                                                  <block type="s4d_get_all_member" id="M[ZoXV@4^#dY%frWnd*:"></block>
-                                                                </value>
-                                                              </block>
-                                                            </statement>
-                                                          </block>
-                                                        </next>
-                                                      </block>
-                                                    </next>
-                                                  </block>
-                                                </statement>
-                                                <statement name="ELSE">
-                                                  <block type="slash_reply" id="owjXx4SX6c0w3.!NvmjH">
-                                                    <value name="CONTENT">
-                                                      <block type="text" id="#VLEb|X+iK#*flt+Enfh">
-                                                        <field name="TEXT">Tu n'a pas la permission.</field>
-                                                      </block>
-                                                    </value>
-                                                    <value name="BOOLEAN">
-                                                      <block type="logic_boolean" id="AnJ8N0hqd9T!x]uan[;N">
-                                                        <field name="BOOL">TRUE</field>
-                                                        <comment pinned="false" h="128" w="265">true - only the person who t=did the comamnd can see it
-
-false - everyone can see it
-                
-                
-                
-                
-                        
-                        
-                    
-                    
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                        
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                    
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        </comment>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </statement>
-                                              </block>
-                                            </statement>
-                                            <next>
-                                              <block type="controls_if" id="p^3,.DYx*I,#SC#|tfxT">
-                                                <mutation elseif="1"></mutation>
-                                                <value name="IF0">
-                                                  <block type="logic_operation" id="Z@/MZ_6t!c78j_vNfu3H">
-                                                    <field name="OP">AND</field>
-                                                    <value name="A">
-                                                      <block type="logic_compare" id="~{tMvQ1zzQ:IQr{{E0Wx">
-                                                        <field name="OP">EQ</field>
-                                                        <value name="A">
-                                                          <block type="interaction_name" id="i/u].((EE=^BJu?z:2M{"></block>
-                                                        </value>
-                                                        <value name="B">
-                                                          <block type="text" id="f%ES70ab{-Kr$YKoAV7G">
-                                                            <field name="TEXT">restart</field>
-                                                          </block>
-                                                        </value>
-                                                      </block>
-                                                    </value>
-                                                    <value name="B">
-                                                      <block type="logic_compare" id="Ox?hxo3*8I)QB7U[2cP8">
-                                                        <field name="OP">EQ</field>
-                                                        <value name="A">
-                                                          <block type="s4d_member_id" id=")zIJh|Dq}^m:ZVt]zZ`@">
-                                                            <value name="MEMBER">
-                                                              <block type="interaction_author" id="d-Oi48qHlF2j;~6)eMMR"></block>
-                                                            </value>
-                                                          </block>
-                                                        </value>
-                                                        <value name="B">
-                                                          <block type="text" id="zx%YlJwq6dr*5zxZ^iTy">
-                                                            <field name="TEXT">746069923465527339</field>
-                                                          </block>
-                                                        </value>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </value>
-                                                <statement name="DO0">
-                                                  <block type="slash_reply" id="l?k{meewci(N3~8A,Szx">
-                                                    <value name="CONTENT">
-                                                      <block type="text" id="7_kPCJXZ_fS/hqZ]:_Tr">
-                                                        <field name="TEXT">Redémarrage en cours...</field>
-                                                      </block>
-                                                    </value>
-                                                    <value name="BOOLEAN">
-                                                      <block type="logic_boolean" id="_$f97@Uq^Xbg4#,]PB-s">
-                                                        <field name="BOOL">TRUE</field>
-                                                        <comment pinned="false" h="128" w="265">true - only the person who t=did the comamnd can see it
-
-false - everyone can see it
-                
-                
-                
-                
-                        
-                        
-                        
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                        
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                    
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        </comment>
-                                                      </block>
-                                                    </value>
-                                                    <next>
-                                                      <block type="jg_web_request_advanced_new2_send_request_to_url_using_method_with_result_giving_request_headers_with_data_sections_then_if_error" id="KMA7=T4TLyZ7IQNZ1#C/">
-                                                        <field name="METHOD">"get"</field>
-                                                        <field name="IMAGEORNOT"></field>
-                                                        <value name="URL">
-                                                          <block type="frost_env" id="b]^WFM!bjeVHg=ohz[X7">
-                                                            <value name="VALUE">
-                                                              <shadow type="text" id="2l+f]5BO%p^aPEz=t;X$">
-                                                                <field name="TEXT">render</field>
-                                                              </shadow>
-                                                            </value>
-                                                          </block>
-                                                        </value>
-                                                        <statement name="THEN">
-                                                          <block type="s4d_print" id="hT3I:8jk3N~^7ef=yzP)">
-                                                            <value name="PRINT">
-                                                              <block type="text" id="2JyzU$X?ME2xcfNqC,;.">
-                                                                <field name="TEXT">Redémarrage en cours...</field>
-                                                              </block>
-                                                            </value>
-                                                            <next>
-                                                              <block type="s4d_send_channel" id="X5GGA/aP,hJRLPG*al}?">
-                                                                <value name="CONTENT">
-                                                                  <block type="text" id=")HWfMyToJP/_?NNLqiL5">
-                                                                    <field name="TEXT">Redémarrage en cours...(Commande /)</field>
-                                                                  </block>
-                                                                </value>
-                                                                <value name="CHANNEL">
-                                                                  <block type="s4d_get_channel" id="6j4TPF4Jn4oKwI4*qR)S">
-                                                                    <field name="SEARCH_TYPE">ID</field>
-                                                                    <value name="VALUE">
-                                                                      <block type="text" id="76%q4OCzn=e:=lwd:M1L">
-                                                                        <field name="TEXT">1413899996691955755</field>
-                                                                      </block>
-                                                                    </value>
-                                                                  </block>
-                                                                </value>
-                                                              </block>
-                                                            </next>
-                                                          </block>
-                                                        </statement>
-                                                        <statement name="IF_ERROR">
-                                                          <block type="s4d_print" id="/i~~WGNDk.P#D+poD8i0">
-                                                            <value name="PRINT">
-                                                              <block type="frost_other_err" id="rWUpGaqX#Ii$A:plw;S,"></block>
-                                                            </value>
-                                                          </block>
-                                                        </statement>
-                                                      </block>
-                                                    </next>
-                                                  </block>
-                                                </statement>
-                                                <value name="IF1">
-                                                  <block type="logic_operation" id="Sg;qmm%HeA4,uXF4IX]|">
-                                                    <field name="OP">AND</field>
-                                                    <value name="A">
-                                                      <block type="logic_compare" id="Ua2yL.@vFl+6ha2(XW2h">
-                                                        <field name="OP">EQ</field>
-                                                        <value name="A">
-                                                          <block type="interaction_name" id="B:r;P2{%Vz(k;-sbv/fu"></block>
-                                                        </value>
-                                                        <value name="B">
-                                                          <block type="text" id="?Ft*lDa#JDKNQ,_tKx[n">
-                                                            <field name="TEXT">restart</field>
-                                                          </block>
-                                                        </value>
-                                                      </block>
-                                                    </value>
-                                                    <value name="B">
-                                                      <block type="logic_compare" id=":*gM}E5*4%:.g7SWu/MJ">
-                                                        <field name="OP">NEQ</field>
-                                                        <value name="A">
-                                                          <block type="s4d_member_id" id="vDz%70bEtBXu5}I8o2kP">
-                                                            <value name="MEMBER">
-                                                              <block type="interaction_author" id="lRg)8T!?e!Rr)@Zi}:1w"></block>
-                                                            </value>
-                                                          </block>
-                                                        </value>
-                                                        <value name="B">
-                                                          <block type="text" id="e#8au020$F}gLnR-GThJ">
-                                                            <field name="TEXT">746069923465527339</field>
-                                                          </block>
-                                                        </value>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </value>
-                                                <statement name="DO1">
-                                                  <block type="slash_reply" id=";M*u1g_E;%~Jv)Y:t)bq">
-                                                    <value name="CONTENT">
-                                                      <block type="text" id="[*CInAK:(VD5Q1_E}2[8">
-                                                        <field name="TEXT">Hop hop hop ! Redémarre pas mon bot, stp.</field>
-                                                      </block>
-                                                    </value>
-                                                    <value name="BOOLEAN">
-                                                      <block type="logic_boolean" id="ala=4G*Zmdsf)WwjIzO4">
-                                                        <field name="BOOL">TRUE</field>
-                                                        <comment pinned="false" h="128" w="265">true - only the person who t=did the comamnd can see it
-
-false - everyone can see it
-                
-                
-                
-                
-                        
-                        
-                        
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                        
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                    
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        </comment>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </statement>
-                                              </block>
-                                            </next>
                                           </block>
                                         </next>
                                       </block>
-                                    </next>
+                                    </statement>
+                                    <value name="IF1">
+                                      <block type="logic_operation" id="Sg;qmm%HeA4,uXF4IX]|">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                          <block type="logic_compare" id="Ua2yL.@vFl+6ha2(XW2h">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="interaction_name" id="B:r;P2{%Vz(k;-sbv/fu"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="?Ft*lDa#JDKNQ,_tKx[n">
+                                                <field name="TEXT">restart</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="logic_compare" id=":*gM}E5*4%:.g7SWu/MJ">
+                                            <field name="OP">NEQ</field>
+                                            <value name="A">
+                                              <block type="s4d_member_id" id="vDz%70bEtBXu5}I8o2kP">
+                                                <value name="MEMBER">
+                                                  <block type="interaction_author" id="lRg)8T!?e!Rr)@Zi}:1w"></block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="e#8au020$F}gLnR-GThJ">
+                                                <field name="TEXT">746069923465527339</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO1">
+                                      <block type="slash_reply" id=";M*u1g_E;%~Jv)Y:t)bq">
+                                        <value name="CONTENT">
+                                          <block type="text" id="[*CInAK:(VD5Q1_E}2[8">
+                                            <field name="TEXT">Hop hop hop ! Redémarre pas mon bot, stp.</field>
+                                          </block>
+                                        </value>
+                                        <value name="BOOLEAN">
+                                          <block type="logic_boolean" id="ala=4G*Zmdsf)WwjIzO4">
+                                            <field name="BOOL">TRUE</field>
+                                            <comment pinned="false" h="128" w="265">true - only the person who t=did the comamnd can see it
+
+false - everyone can see it
+                
+                
+                
+                
+                        
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                    
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                            </comment>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
                                   </block>
                                 </next>
                               </block>
@@ -5725,7 +4992,7 @@ false - everyone can see it
       </block>
     </statement>
   </block>
-  <block type="s4d_on_member_join" id="bSbXq9PqHWIWvGsPi1{|" x="-477" y="-487">
+  <block type="s4d_on_member_join" id="bSbXq9PqHWIWvGsPi1{|" x="-327" y="-447">
     <statement name="STATEMENTS">
       <block type="controls_if" id="bjP@c/l^5v#[p(6Y^ia%">
         <value name="IF0">
@@ -5977,9 +5244,6 @@ false - everyone can see it
         </statement>
       </block>
     </statement>
-  </block>
-  <block type="math_number" id="azZW-4d=/=%8CqfRSS2R" disabled="true" x="-147" y="-342">
-    <field name="NUM">0</field>
   </block>
   <block type="banned_event" id="XrO/*uX}p)g;t!;R4VSU" x="2285" y="284">
     <statement name="code">
