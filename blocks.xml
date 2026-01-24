@@ -2037,31 +2037,31 @@
                                   </block>
                                 </statement>
                                 <next>
-                                  <block type="jg_express_website_on_page_on_request_type_do" id="OS9GY{FN2_r7oZ:si.?J">
+                                  <block type="jg_express_website_on_page_on_request_type_do" id="wN-iBvD.UHM9`J=zh@^)">
                                     <field name="TYPE">all</field>
                                     <value name="PAGE">
-                                      <shadow type="text" id="BrtQ):l?@4zd-GIncswP">
-                                        <field name="TEXT">/51966</field>
+                                      <shadow type="text" id=".j#D`%u0RP;5scKv~Iuh">
+                                        <field name="TEXT">/sitemap.xml</field>
                                       </shadow>
                                     </value>
                                     <statement name="STATEMENTS">
-                                      <block type="jg_file_create" id="TQ}@*n9Kx%dBT+uiWP,q">
+                                      <block type="jg_file_create" id="Q0rHJIm_4mXG/F$e*3To">
                                         <field name="truefalse">true</field>
                                         <value name="fileName">
-                                          <block type="jg_text_remake_paragraph_quotes" id="C/{/HZCfY$vpkroCq$:b">
-                                            <field name="TEXT">51966.html</field>
+                                          <block type="jg_text_remake_paragraph_quotes" id="1({.jS4IZQ.MIg3:0.KU">
+                                            <field name="TEXT">sitemap.xml</field>
                                           </block>
                                         </value>
                                         <value name="fileContent">
-                                          <block type="jg_text_remake_paragraph_quotes" id="PvT$[S2,y_E4hdG?FEdV">
-                                            <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="fr"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10;    &lt;title&gt;Qué cé cé&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        body {&amp;#10;            font-family: 'Helvetica Neue', Arial, sans-serif;&amp;#10;            background-color: #f0f0f0;&amp;#10;            color: #333;&amp;#10;            margin: 0;&amp;#10;            display: flex;&amp;#10;            flex-direction: column;&amp;#10;            justify-content: center;&amp;#10;            align-items: center;&amp;#10;            min-height: 100vh;&amp;#10;            text-align: center;&amp;#10;        }&amp;#10;&amp;#10;        .container {&amp;#10;            background-color: #fff;&amp;#10;            padding: 40px;&amp;#10;            border-radius: 12px;&amp;#10;            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);&amp;#10;            max-width: 600px;&amp;#10;            width: 90%;&amp;#10;            transition: transform 0.3s ease-in-out;&amp;#10;        }&amp;#10;&amp;#10;        .container:hover {&amp;#10;            transform: translateY(-5px);&amp;#10;        }&amp;#10;&amp;#10;        h1 {&amp;#10;            font-size: 3rem;&amp;#10;            color: #4CAF50;&amp;#10;            margin-bottom: 20px;&amp;#10;        }&amp;#10;        &amp;#10;        .number {&amp;#10;            font-size: 4rem;&amp;#10;            font-weight: bold;&amp;#10;            color: #d9534f;&amp;#10;            margin-bottom: 20px;&amp;#10;        }&amp;#10;&amp;#10;        .button {&amp;#10;            background-color: #007bff;&amp;#10;            color: #fff;&amp;#10;            border: none;&amp;#10;            padding: 12px 24px;&amp;#10;            font-size: 1.1rem;&amp;#10;            border-radius: 8px;&amp;#10;            cursor: pointer;&amp;#10;            transition: background-color 0.3s ease;&amp;#10;        }&amp;#10;&amp;#10;        .button:hover {&amp;#10;            background-color: #0056b3;&amp;#10;        }&amp;#10;&amp;#10;        .fun-fact-content {&amp;#10;            display: none; /* Cache le contenu par défaut */&amp;#10;            margin-top: 30px;&amp;#10;            animation: fadeIn 1s ease-in-out;&amp;#10;        }&amp;#10;        &amp;#10;        @keyframes fadeIn {&amp;#10;            from { opacity: 0; transform: translateY(20px); }&amp;#10;            to   { opacity: 1; transform: translateY(0); }&amp;#10;        }&amp;#10;&amp;#10;        p {&amp;#10;            font-size: 1.2rem;&amp;#10;            line-height: 1.6;&amp;#10;        }&amp;#10;        &amp;#10;        strong {&amp;#10;            color: #d9534f;&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;&amp;#10;    &lt;div class="container"&gt;&amp;#10;        &lt;h1&gt;C'est quoi&lt;/h1&gt;&amp;#10;        &lt;div class="number"&gt;51966 ?&lt;/div&gt;&amp;#10;        &amp;#10;        &lt;button id="revealButton" class="button"&gt;Cliquez pour le découvrir (no rick roll promis)&lt;/button&gt;&amp;#10;&amp;#10;        &lt;div id="funFactContent" class="fun-fact-content"&gt;&amp;#10;            &lt;p&gt;&amp;#10;                Saviez-vous que le nombre &lt;strong&gt;51966&lt;/strong&gt;, en base 10 (décimal), est en fait un mot ?&amp;#10;            &lt;/p&gt;&amp;#10;            &lt;p&gt;&amp;#10;                En informatique, le système de base 16 (hexadécimal) utilise des chiffres de 0 à 9 et des lettres de A à F.&amp;#10;            &lt;/p&gt;&amp;#10;            &lt;p&gt;&amp;#10;                Lorsque vous convertissez 51966 en base 16, vous obtenez le mot &lt;strong&gt;CAFE&lt;/strong&gt; !&amp;#10;            &lt;/p&gt;&amp;#10;        &lt;/div&gt;&amp;#10;    &lt;/div&gt;&amp;#10;&amp;#10;    &lt;script&gt;&amp;#10;        document.getElementById('revealButton').addEventListener('click', function() {&amp;#10;            document.getElementById('funFactContent').style.display = 'block';&amp;#10;            this.style.display = 'none'; // Cache le bouton après le clic&amp;#10;        });&amp;#10;    &lt;/script&gt;&amp;#10;&amp;#10;&lt;/body&gt;&amp;#10;&lt;/html&gt;</field>
+                                          <block type="jg_text_remake_paragraph_quotes" id="70yvo+l_Jf`w;`VAE_^K">
+                                            <field name="TEXT">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&amp;#10;&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;&amp;#10;   &lt;url&gt;&amp;#10;      &lt;loc&gt;https://animal-crossing.onrender.com/&lt;/loc&gt;&amp;#10;      &lt;lastmod&gt;2024-05-20&lt;/lastmod&gt;&amp;#10;      &lt;changefreq&gt;weekly&lt;/changefreq&gt;&amp;#10;      &lt;priority&gt;1.0&lt;/priority&gt;&amp;#10;   &lt;/url&gt;&amp;#10;   &lt;url&gt;&amp;#10;      &lt;loc&gt;https://animal-crossing.onrender.com/statut&lt;/loc&gt;&amp;#10;      &lt;lastmod&gt;2024-05-20&lt;/lastmod&gt;&amp;#10;      &lt;changefreq&gt;daily&lt;/changefreq&gt;&amp;#10;      &lt;priority&gt;0.5&lt;/priority&gt;&amp;#10;   &lt;/url&gt;&amp;#10;&lt;/urlset&gt;</field>
                                           </block>
                                         </value>
                                         <next>
-                                          <block type="jg_express_website_respond_with_file" id="sBUAp2`9100b1xFbo`Eu">
+                                          <block type="jg_express_website_respond_with_file" id="/}V`2vAa@N~jM$0j[sE`">
                                             <value name="TEXT">
-                                              <shadow type="text" id="Rm.s)|jK*zb4A3]?b7t2">
-                                                <field name="TEXT">51966.html</field>
+                                              <shadow type="text" id="GVQ(_X|fq-oZjZ~`N82r">
+                                                <field name="TEXT">sitemap.xml</field>
                                               </shadow>
                                             </value>
                                           </block>
@@ -2069,31 +2069,99 @@
                                       </block>
                                     </statement>
                                     <next>
-                                      <block type="jg_express_website_on_invalid_request_do" id="xd*0d9.yfskvR{c02CHd">
+                                      <block type="jg_express_website_on_page_on_request_type_do" id="=`i#Esre;I/R?9Ydj{!b">
+                                        <field name="TYPE">all</field>
+                                        <value name="PAGE">
+                                          <shadow type="text" id="sx4L7xz=?$`~MJq[X%0w">
+                                            <field name="TEXT">/robots.txt</field>
+                                          </shadow>
+                                        </value>
                                         <statement name="STATEMENTS">
-                                          <block type="jg_file_create" id="K.uG~X=d0%]][iaw{o?o">
+                                          <block type="jg_file_create" id="]V%L!SpqDj`[rSR/I{G.">
                                             <field name="truefalse">true</field>
                                             <value name="fileName">
-                                              <block type="jg_text_remake_paragraph_quotes" id="GWioV5S85}!*ec4xAcbM">
-                                                <field name="TEXT">404.html</field>
+                                              <block type="jg_text_remake_paragraph_quotes" id="$}`JwP!;}#Q~,}Hm(IqV">
+                                                <field name="TEXT">robots.txt</field>
                                               </block>
                                             </value>
                                             <value name="fileContent">
-                                              <block type="jg_text_remake_paragraph_quotes" id="kw5{={6u1kL.kq8(Z.g0">
-                                                <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="en"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10;    &lt;title&gt;404 Tu es au mauvais endroit !&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        body {&amp;#10;            font-family: Arial, sans-serif;&amp;#10;            background-color: #f4f4f4;&amp;#10;            color: #333;&amp;#10;            margin: 0;&amp;#10;            display: flex;&amp;#10;            justify-content: center;&amp;#10;            align-items: center;&amp;#10;            height: 100vh;&amp;#10;            text-align: center;&amp;#10;        }&amp;#10;        .container {&amp;#10;            padding: 2rem;&amp;#10;            background: #fff;&amp;#10;            border-radius: 8px;&amp;#10;            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);&amp;#10;            max-width: 500px;&amp;#10;            width: 90%;&amp;#10;        }&amp;#10;        h1 {&amp;#10;            font-size: 5rem;&amp;#10;            margin: 0;&amp;#10;            color: #d9534f;&amp;#10;        }&amp;#10;        h2 {&amp;#10;            font-size: 1.5rem;&amp;#10;            margin-top: 0;&amp;#10;            margin-bottom: 1rem;&amp;#10;        }&amp;#10;        p {&amp;#10;            font-size: 1rem;&amp;#10;            margin-bottom: 2rem;&amp;#10;        }&amp;#10;        .button {&amp;#10;            display: inline-block;&amp;#10;            padding: 10px 20px;&amp;#10;            font-size: 1rem;&amp;#10;            color: #fff;&amp;#10;            background-color: #5cb85c;&amp;#10;            text-decoration: none;&amp;#10;            border-radius: 5px;&amp;#10;            transition: background-color 0.3s ease;&amp;#10;        }&amp;#10;        .button:hover {&amp;#10;            background-color: #4cae4c;&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;    &lt;div class="container"&gt;&amp;#10;        &lt;h1&gt;404&lt;/h1&gt;&amp;#10;        &lt;h2&gt;Page non trouvée&lt;/h2&gt;&amp;#10;        &lt;p&gt;&amp;#10;            Désolé, la page que vous recherchez est introuvable. Il se peut qu'elle ait été supprimée ou que son nom ait changé.&amp;#10;        &lt;/p&gt;&amp;#10;        &lt;a href="https://botttttte.onrender.com/" class="button"&gt;Homrpage&lt;/a&gt;&amp;#10;    &lt;/div&gt;&amp;#10;&lt;/body&gt;&amp;#10;&lt;/html&gt;</field>
+                                              <block type="jg_text_remake_paragraph_quotes" id="@)IN}cpQ~l7#@P/52rE+">
+                                                <field name="TEXT">User-agent: *&amp;#10;Allow: /&amp;#10;&amp;#10;Sitemap: https://animal-crossing.onrender.com/sitemap.xml</field>
                                               </block>
                                             </value>
                                             <next>
-                                              <block type="jg_express_website_respond_with_file" id="RXWpG1tJ?RaG7Eoq8Dlt">
+                                              <block type="jg_express_website_respond_with_file" id="v#4=eW9!yh3H:+~vz6nf">
                                                 <value name="TEXT">
-                                                  <shadow type="text" id="WW]w$~Ro/(AJ^62JPk]Z">
-                                                    <field name="TEXT">404.html</field>
+                                                  <shadow type="text" id="#nw6:cxkw@wn)tjt1IW$">
+                                                    <field name="TEXT">robots.txt</field>
                                                   </shadow>
                                                 </value>
                                               </block>
                                             </next>
                                           </block>
                                         </statement>
+                                        <next>
+                                          <block type="jg_express_website_on_page_on_request_type_do" id="OS9GY{FN2_r7oZ:si.?J">
+                                            <field name="TYPE">all</field>
+                                            <value name="PAGE">
+                                              <shadow type="text" id="BrtQ):l?@4zd-GIncswP">
+                                                <field name="TEXT">/51966</field>
+                                              </shadow>
+                                            </value>
+                                            <statement name="STATEMENTS">
+                                              <block type="jg_file_create" id="TQ}@*n9Kx%dBT+uiWP,q">
+                                                <field name="truefalse">true</field>
+                                                <value name="fileName">
+                                                  <block type="jg_text_remake_paragraph_quotes" id="C/{/HZCfY$vpkroCq$:b">
+                                                    <field name="TEXT">51966.html</field>
+                                                  </block>
+                                                </value>
+                                                <value name="fileContent">
+                                                  <block type="jg_text_remake_paragraph_quotes" id="PvT$[S2,y_E4hdG?FEdV">
+                                                    <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="fr"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10;    &lt;title&gt;Qué cé cé&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        body {&amp;#10;            font-family: 'Helvetica Neue', Arial, sans-serif;&amp;#10;            background-color: #f0f0f0;&amp;#10;            color: #333;&amp;#10;            margin: 0;&amp;#10;            display: flex;&amp;#10;            flex-direction: column;&amp;#10;            justify-content: center;&amp;#10;            align-items: center;&amp;#10;            min-height: 100vh;&amp;#10;            text-align: center;&amp;#10;        }&amp;#10;&amp;#10;        .container {&amp;#10;            background-color: #fff;&amp;#10;            padding: 40px;&amp;#10;            border-radius: 12px;&amp;#10;            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);&amp;#10;            max-width: 600px;&amp;#10;            width: 90%;&amp;#10;            transition: transform 0.3s ease-in-out;&amp;#10;        }&amp;#10;&amp;#10;        .container:hover {&amp;#10;            transform: translateY(-5px);&amp;#10;        }&amp;#10;&amp;#10;        h1 {&amp;#10;            font-size: 3rem;&amp;#10;            color: #4CAF50;&amp;#10;            margin-bottom: 20px;&amp;#10;        }&amp;#10;        &amp;#10;        .number {&amp;#10;            font-size: 4rem;&amp;#10;            font-weight: bold;&amp;#10;            color: #d9534f;&amp;#10;            margin-bottom: 20px;&amp;#10;        }&amp;#10;&amp;#10;        .button {&amp;#10;            background-color: #007bff;&amp;#10;            color: #fff;&amp;#10;            border: none;&amp;#10;            padding: 12px 24px;&amp;#10;            font-size: 1.1rem;&amp;#10;            border-radius: 8px;&amp;#10;            cursor: pointer;&amp;#10;            transition: background-color 0.3s ease;&amp;#10;        }&amp;#10;&amp;#10;        .button:hover {&amp;#10;            background-color: #0056b3;&amp;#10;        }&amp;#10;&amp;#10;        .fun-fact-content {&amp;#10;            display: none; /* Cache le contenu par défaut */&amp;#10;            margin-top: 30px;&amp;#10;            animation: fadeIn 1s ease-in-out;&amp;#10;        }&amp;#10;        &amp;#10;        @keyframes fadeIn {&amp;#10;            from { opacity: 0; transform: translateY(20px); }&amp;#10;            to   { opacity: 1; transform: translateY(0); }&amp;#10;        }&amp;#10;&amp;#10;        p {&amp;#10;            font-size: 1.2rem;&amp;#10;            line-height: 1.6;&amp;#10;        }&amp;#10;        &amp;#10;        strong {&amp;#10;            color: #d9534f;&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;&amp;#10;    &lt;div class="container"&gt;&amp;#10;        &lt;h1&gt;C'est quoi&lt;/h1&gt;&amp;#10;        &lt;div class="number"&gt;51966 ?&lt;/div&gt;&amp;#10;        &amp;#10;        &lt;button id="revealButton" class="button"&gt;Cliquez pour le découvrir (no rick roll promis)&lt;/button&gt;&amp;#10;&amp;#10;        &lt;div id="funFactContent" class="fun-fact-content"&gt;&amp;#10;            &lt;p&gt;&amp;#10;                Saviez-vous que le nombre &lt;strong&gt;51966&lt;/strong&gt;, en base 10 (décimal), est en fait un mot ?&amp;#10;            &lt;/p&gt;&amp;#10;            &lt;p&gt;&amp;#10;                En informatique, le système de base 16 (hexadécimal) utilise des chiffres de 0 à 9 et des lettres de A à F.&amp;#10;            &lt;/p&gt;&amp;#10;            &lt;p&gt;&amp;#10;                Lorsque vous convertissez 51966 en base 16, vous obtenez le mot &lt;strong&gt;CAFE&lt;/strong&gt; !&amp;#10;            &lt;/p&gt;&amp;#10;        &lt;/div&gt;&amp;#10;    &lt;/div&gt;&amp;#10;&amp;#10;    &lt;script&gt;&amp;#10;        document.getElementById('revealButton').addEventListener('click', function() {&amp;#10;            document.getElementById('funFactContent').style.display = 'block';&amp;#10;            this.style.display = 'none'; // Cache le bouton après le clic&amp;#10;        });&amp;#10;    &lt;/script&gt;&amp;#10;&amp;#10;&lt;/body&gt;&amp;#10;&lt;/html&gt;</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="jg_express_website_respond_with_file" id="sBUAp2`9100b1xFbo`Eu">
+                                                    <value name="TEXT">
+                                                      <shadow type="text" id="Rm.s)|jK*zb4A3]?b7t2">
+                                                        <field name="TEXT">51966.html</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="jg_express_website_on_invalid_request_do" id="xd*0d9.yfskvR{c02CHd">
+                                                <statement name="STATEMENTS">
+                                                  <block type="jg_file_create" id="K.uG~X=d0%]][iaw{o?o">
+                                                    <field name="truefalse">true</field>
+                                                    <value name="fileName">
+                                                      <block type="jg_text_remake_paragraph_quotes" id="GWioV5S85}!*ec4xAcbM">
+                                                        <field name="TEXT">404.html</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="fileContent">
+                                                      <block type="jg_text_remake_paragraph_quotes" id="kw5{={6u1kL.kq8(Z.g0">
+                                                        <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="en"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10;    &lt;title&gt;404 Tu es au mauvais endroit !&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        body {&amp;#10;            font-family: Arial, sans-serif;&amp;#10;            background-color: #f4f4f4;&amp;#10;            color: #333;&amp;#10;            margin: 0;&amp;#10;            display: flex;&amp;#10;            justify-content: center;&amp;#10;            align-items: center;&amp;#10;            height: 100vh;&amp;#10;            text-align: center;&amp;#10;        }&amp;#10;        .container {&amp;#10;            padding: 2rem;&amp;#10;            background: #fff;&amp;#10;            border-radius: 8px;&amp;#10;            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);&amp;#10;            max-width: 500px;&amp;#10;            width: 90%;&amp;#10;        }&amp;#10;        h1 {&amp;#10;            font-size: 5rem;&amp;#10;            margin: 0;&amp;#10;            color: #d9534f;&amp;#10;        }&amp;#10;        h2 {&amp;#10;            font-size: 1.5rem;&amp;#10;            margin-top: 0;&amp;#10;            margin-bottom: 1rem;&amp;#10;        }&amp;#10;        p {&amp;#10;            font-size: 1rem;&amp;#10;            margin-bottom: 2rem;&amp;#10;        }&amp;#10;        .button {&amp;#10;            display: inline-block;&amp;#10;            padding: 10px 20px;&amp;#10;            font-size: 1rem;&amp;#10;            color: #fff;&amp;#10;            background-color: #5cb85c;&amp;#10;            text-decoration: none;&amp;#10;            border-radius: 5px;&amp;#10;            transition: background-color 0.3s ease;&amp;#10;        }&amp;#10;        .button:hover {&amp;#10;            background-color: #4cae4c;&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;    &lt;div class="container"&gt;&amp;#10;        &lt;h1&gt;404&lt;/h1&gt;&amp;#10;        &lt;h2&gt;Page non trouvée&lt;/h2&gt;&amp;#10;        &lt;p&gt;&amp;#10;            Désolé, la page que vous recherchez est introuvable. Il se peut qu'elle ait été supprimée ou que son nom ait changé.&amp;#10;        &lt;/p&gt;&amp;#10;        &lt;a href="https://botttttte.onrender.com/" class="button"&gt;Homrpage&lt;/a&gt;&amp;#10;    &lt;/div&gt;&amp;#10;&lt;/body&gt;&amp;#10;&lt;/html&gt;</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="jg_express_website_respond_with_file" id="RXWpG1tJ?RaG7Eoq8Dlt">
+                                                        <value name="TEXT">
+                                                          <shadow type="text" id="WW]w$~Ro/(AJ^62JPk]Z">
+                                                            <field name="TEXT">404.html</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
                                       </block>
                                     </next>
                                   </block>

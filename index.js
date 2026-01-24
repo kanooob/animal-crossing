@@ -807,6 +807,31 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('discord.html')))
     
       })
+      S4D_WEBSITECREATION_EXPRESS_app.all('/sitemap.xml', async function(req, res) {
+          S4D_APP_write.sync(String('sitemap.xml'), String(`<?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+           <url>
+              <loc>https://animal-crossing.onrender.com/</loc>
+              <lastmod>2024-05-20</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>1.0</priority>
+           </url>
+           <url>
+              <loc>https://animal-crossing.onrender.com/statut</loc>
+              <lastmod>2024-05-20</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>0.5</priority>
+           </url>
+        </urlset>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('sitemap.xml')))
+    
+      })
+      S4D_WEBSITECREATION_EXPRESS_app.all('/robots.txt', async function(req, res) {
+          S4D_APP_write.sync(String('robots.txt'), String(`User-agent: *
+        Allow: /
+    
+        Sitemap: https://animal-crossing.onrender.com/sitemap.xml`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('robots.txt')))
+    
+      })
       S4D_WEBSITECREATION_EXPRESS_app.all('/51966', async function(req, res) {
           S4D_APP_write.sync(String('51966.html'), String(`<!DOCTYPE html>
         <html lang="fr">
