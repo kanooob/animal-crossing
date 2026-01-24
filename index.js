@@ -325,28 +325,28 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
       })
       S4D_WEBSITECREATION_EXPRESS_app.all('/', async function(req, res) {
-          S4D_APP_write.sync(String('home.html'), String(([`<!DOCTYPE html>
+          S4D_APP_write.sync(String('home.html'), String(`<!DOCTYPE html>
         <html lang="fr">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <meta property="og:image" content="https://raw.githubusercontent.com/kanooob/animal-crossing/refs/heads/main/image.png">
-            <title>Bienvenue sur Animal Crossing - Le Serveur Animal Crossing</title>
+            <title>Bienvenue sur Animal Crossing Community</title>
+            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/animal-crossing/refs/heads/main/image.png">
+    
             <style>
-                /* --- CONFIGURATION GÉNÉRALE & COULEURS --- */
                 :root {
-                    --ac-green: #7de2b9; /* Vert menthe Animal Crossing */
+                    --ac-green: #7de2b9;
                     --ac-green-dark: #4eb68e;
-                    --ac-cream: #fbf8e8; /* Fond crème */
-                    --ac-brown: #5c483a; /* Couleur du texte (bois) */
-                    --ac-yellow: #f8e285; /* Jaune clochette */
-                    --ac-blue: #59c1e7; /* Bleu Dodo Airlines */
+                    --ac-cream: #fbf8e8;
+                    --ac-brown: #5c483a;
+                    --ac-yellow: #f8e285;
+                    --ac-blue: #59c1e7;
                 }
     
                 body {
                     margin: 0;
                     padding: 0;
-                    font-family: 'Verdana', 'Segoe UI', sans-serif; /* Police ronde et simple */
+                    font-family: 'Verdana', 'Segoe UI', sans-serif;
                     background-color: var(--ac-cream);
                     color: var(--ac-brown);
                     line-height: 1.6;
@@ -355,10 +355,9 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     background-position: 0 0, 30px 30px;
                 }
     
-                /* --- EN-TÊTE (HEADER) --- */
                 header {
                     background-color: var(--ac-green);
-                    padding: 20px;
+                    padding: 30px 20px;
                     text-align: center;
                     border-bottom: 5px solid white;
                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -368,113 +367,131 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     margin: 0;
                     font-size: 2.5rem;
                     color: white;
-                    text-shadow: 2px 2px 0px var(--ac-brown);
+                    text-shadow: 3px 3px 0px var(--ac-brown);
                 }
     
-                /* --- SECTION HÉROS (ACCUEIL) --- */
                 .hero {
                     text-align: center;
-                    padding: 60px 20px;
+                    padding: 50px 20px;
                     max-width: 800px;
                     margin: 0 auto;
-                }
-    
-                .hero h2 {
-                    font-size: 2rem;
-                    color: var(--ac-blue);
                 }
     
                 .cta-button {
                     display: inline-block;
                     background-color: var(--ac-brown);
                     color: white;
-                    padding: 15px 30px;
-                    font-size: 1.2rem;
+                    padding: 18px 40px;
+                    font-size: 1.3rem;
                     text-decoration: none;
-                    border-radius: 30px;
+                    border-radius: 40px;
                     margin-top: 20px;
-                    transition: transform 0.2s, background-color 0.2s;
-                    border: 3px solid white;
-                    box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+                    transition: all 0.3s ease;
+                    border: 4px solid white;
+                    box-shadow: 0 5px 0 rgba(0,0,0,0.2);
                 }
     
                 .cta-button:hover {
-                    transform: translateY(-2px);
-                    background-color: #7a604d;
+                    transform: scale(1.05);
+                    background-color: var(--ac-green-dark);
                 }
     
-                .cta-button:active {
-                    transform: translateY(2px);
-                    box-shadow: none;
+                .features-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 40px 20px;
                 }
     
-                /* --- CARTES DE CONTENU --- */
-                .features {
+                .features-grid {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
-                    gap: 20px;
-                    padding: 40px 20px;
-                    max-width: 1000px;
-                    margin: 0 auto;
+                    gap: 30px;
+                    max-width: 1200px;
                 }
     
                 .card {
                     background: white;
-                    border-radius: 20px;
+                    border-radius: 25px;
                     padding: 30px;
                     width: 300px;
                     text-align: center;
-                    box-shadow: 0 4px 10px rgba(92, 72, 58, 0.1);
-                    border: 2px solid var(--ac-green);
+                    box-shadow: 0 6px 15px rgba(92, 72, 58, 0.08);
+                    border: 3px solid transparent;
+                    transition: transform 0.3s ease, border-color 0.3s ease;
+                    box-sizing: border-box;
+                }
+    
+                .card:hover {
+                    transform: translateY(-10px);
+                    border-color: var(--ac-yellow);
                 }
     
                 .card-icon {
-                    font-size: 3rem;
-                    margin-bottom: 10px;
+                    font-size: 3.5rem;
+                    margin-bottom: 15px;
+                    display: block;
                 }
     
                 .card h3 {
+                    margin: 0 0 10px 0;
                     color: var(--ac-green-dark);
+                    font-size: 1.4rem;
                 }
     
-                /* --- JEUX LISTÉS --- */
                 .games-list {
                     background-color: var(--ac-blue);
                     color: white;
-                    padding: 40px 20px;
+                    padding: 50px 20px;
                     text-align: center;
-                    border-radius: 20px;
-                    margin: 20px;
-                    border: 4px solid white;
+                    border-radius: 30px;
+                    margin: 40px 20px;
+                    border: 5px solid white;
                 }
     
                 .games-grid {
                     display: flex;
                     justify-content: center;
                     flex-wrap: wrap;
-                    gap: 15px;
-                    margin-top: 20px;
+                    gap: 12px;
+                    margin-top: 25px;
                 }
     
                 .game-badge {
                     background: rgba(255,255,255,0.2);
-                    padding: 10px 20px;
-                    border-radius: 15px;
+                    padding: 12px 20px;
+                    border-radius: 20px;
                     font-weight: bold;
+                    border: 2px solid rgba(255,255,255,0.4);
                 }
     
-                /* --- PIED DE PAGE --- */
                 footer {
                     text-align: center;
-                    padding: 30px;
-                    font-size: 0.9rem;
-                    color: #888;
-                    background-color: white;
-                    margin-top: 50px;
+                    padding: 40px;
+                    background: white;
+                    border-top: 5px solid var(--ac-green);
                 }
     
-                /* --- MOBILE --- */
+                /* Style du lien de statut */
+                .status-link {
+                    display: inline-block;
+                    margin-top: 15px;
+                    color: var(--ac-green-dark);
+                    text-decoration: none;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                    padding: 5px 12px;
+                    border: 2px solid var(--ac-green);
+                    border-radius: 15px;
+                    transition: all 0.2s;
+                }
+    
+                .status-link:hover {
+                    background-color: var(--ac-green);
+                    color: white;
+                }
+    
                 @media (max-width: 600px) {
                     h1 { font-size: 1.8rem; }
                     .card { width: 100%; }
@@ -488,54 +505,81 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             </header>
     
             <section class="hero">
-                <h2>Bienvenue sur votre nouvelle île !</h2>
-                <p>
-                    Rejoignez notre communauté francophone bienveillante dédiée à l'univers d'Animal Crossing.
-                    Que vous soyez un vétéran ou un nouveau résident, nos portes sont ouvertes !
-                </p>
+                <h2>Votre nouveau chez-vous commence ici !</h2>
+                <p>Plongez dans l'univers apaisant d'Animal Crossing avec une communauté passionnée. Que vous soyez sur N64 ou Switch, il y a une place pour vous sur notre île virtuelle.</p>
     
                 <a href="https://discord.com/invite/95twM4Rked" class="cta-button" target="_blank">
-                    ✈️ Rejoindre le Discord
+                    ✈️ Prendre le vol pour le Discord
                 </a>
             </section>
     
-            <div class="features">
-                <div class="card">
-                    <div class="card-icon">🤝</div>
-                    <h3>Pour tout le monde</h3>
-                    <p>Une ambiance inclusive, respectueuse et "chill". Pas de pression, juste du plaisir à partager notre passion.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🎁</div>
-                    <h3>Échanges & Navets</h3>
-                    <p>Besoin de plans ? D'un bon taux de navets ? Ou simplement de visiter d'autres îles ? C'est ici que ça se passe !</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🎮</div>
-                    <h3>Tous les opus</h3>
-                    <p>Nous avons des salons dédiés pour chaque jeu de la licence, pas seulement New Horizons !</p>
+            <div class="features-container">
+                <div class="features-grid">
+                    <div class="card">
+                        <span class="card-icon">🤝</span>
+                        <h3>Entraide & Partage</h3>
+                        <p>Une question sur le jeu ? Besoin de matériaux ? Notre communauté est là pour s'entraider chaque jour.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">💰</span>
+                        <h3>Bourse aux Navets</h3>
+                        <p>Accédez aux meilleurs taux pour vendre vos navets et devenir le plus riche du village !</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">📸</span>
+                        <h3>Concours Photo</h3>
+                        <p>Participez à nos défis thématiques et montrez vos plus beaux paysages ou tenues.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">🎁</span>
+                        <h3>Giveaways</h3>
+                        <p>Nous organisons régulièrement des distributions d'objets rares, de clochettes et de tickets Nook.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">📅</span>
+                        <h3>Événements</h3>
+                        <p>Des soirées jeux, des chasses au trésor et des célébrations pour chaque fête du calendrier.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">🛠️</span>
+                        <h3>Salons Créatifs</h3>
+                        <p>Partagez vos motifs personnalisés, vos plans d'îles et trouvez l'inspiration pour vos travaux.</p>
+                    </div>
                 </div>
             </div>
     
             <section class="games-list">
-                <h2>🏰 Salons disponibles pour :</h2>
+                <h2>🏰 Salons dédiés pour tous les jeux :</h2>
                 <div class="games-grid">
-                    <span class="game-badge">New Horizons (Switch)</span>
-                    <span class="game-badge">New Leaf (3DS)</span>
-                    <span class="game-badge">Pocket Camp (Mobile)</span>
-                    <span class="game-badge">City Folk / Let's Go to the City (Wii)</span>
+                    <span class="game-badge">Dōbutsu no Mori (N64)</span>
+                    <span class="game-badge">Animal Crossing (GameCube)</span>
                     <span class="game-badge">Wild World (DS)</span>
-                    <span class="game-badge">GameCube & N64</span>
+                    <span class="game-badge">Let's Go to the City (Wii)</span>
+                    <span class="game-badge">New Leaf (3DS)</span>
+                    <span class="game-badge">New Horizons (Switch)</span>
+                    <span class="game-badge">Happy Home Designer</span>
+                    <span class="game-badge">Pocket Camp</span>
+                    <span class="game-badge">Amiibo Festival</span>
                 </div>
             </section>
     
             <footer>
-                <p>© 2024-`,(new Date().getFullYear()),` Animal Crossing Communauté - Site non officiel.</p>
-                <p>Animal Crossing est une marque déposée de Nintendo.</p>
+                <p><strong>Animal Crossing Community</strong> - Créé avec passion par des fans.</p>
+                <p>© 2024-<span id="current-year"></span> Animal Crossing Community. Tous droits réservés.</p>
+    
+                <a href="https://animal-crossing.onrender.com/statut" class="status-link" target="_blank">
+                    📡 Statut du site
+                </a>
+    
+                <p style="font-size: 0.8rem; margin-top: 15px;">Ce site n'est pas affilié à Nintendo.</p>
             </footer>
     
+            <script>
+                document.getElementById("current-year").textContent = new Date().getFullYear();
+            </script>
+    
         </body>
-        </html>`].join(''))), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('home.html')))
+        </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('home.html')))
     
       })
       S4D_WEBSITECREATION_EXPRESS_app.all('/on', async function(req, res) {
