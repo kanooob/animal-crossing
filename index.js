@@ -104,7 +104,15 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       membre_nouveau = 0;
       membre_parti = 0;
       Aujourd_hui = ((new Date().getDate()));
-      if (anecdote_1 == 1 || ((new Date().getDate())) % 5 === 0) {
+      if (anecdote_1 == 1) {
+        s4d.client.channels.cache.get('1456601685760938077').messages.fetch({ limit: 2 }).then(async (last_messages_in_channel) => {
+              if ('1369648140483039403' == (((last_messages_in_channel.at(2 - 1)).author).id)) {
+            (last_messages_in_channel.at(2 - 1)).delete()
+                }
+    
+        });
+      }
+      if (anecdote_1 == 2 || ((new Date().getDate())) % 5 === 0) {
         anecdote_1 = 0;
       }
     
@@ -114,6 +122,9 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       if ((reaction.emoji.name) != '⭐') {
         (reaction.message).react((reaction.emoji.name))
             }
+      if ((reaction.emoji.name) == '🔔' && ((reaction.message.channel).id) == '1199727716023414794') {
+        (user).roles.add((id_serveur.roles.cache.get('1451864854221815908')));
+      }
     
     });
     
@@ -198,7 +209,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         });
     
     eventEmitter.on('anectdote', async => {
-          s4d.client.channels.cache.get('1456601685760938077').permissionOverwrites.edit(((s4d.client.guilds.cache.get(id_serveur)).roles.cache.get('1199727151721746555')), { SEND_MESSAGES: true });s4d.client.channels.cache.get('1456601685760938077').send({content:String('C\'est l\'heure de l\'<@&1456604350536220745> !')});
+          s4d.client.channels.cache.get('1456601685760938077').permissionOverwrites.edit(((s4d.client.guilds.cache.get(id_serveur)).roles.cache.get('1199727151721746555')), { SEND_MESSAGES: true });s4d.client.channels.cache.get('1456601685760938077').send({content:String((['C\'est l\'heure de l\'<@&1456604350536220745> !','\n','-# Plus d\'information : https://discord.com/channels/1199715873871638620/1456601685760938077/1456625725670162605.'].join('')))});
     
       });
     
@@ -224,7 +235,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       membre_parti = 0;
       Aujourd_hui = ((new Date().getDate()));
       temps_avant_bump = 120;
-      anecdote_1 = 1;
+      anecdote_1 = 2;
       S4D_APP_PKG_axios({
               method: "get",
               url: (process.env[String('render_bot_2')]),
@@ -1103,6 +1114,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                 }
     
         });
+        anecdote_1 = 2;
       }
     
         });
@@ -1118,6 +1130,10 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             s4dmessage.delete();
         (s4dmessage.channel).send({content:String(([' Merci d\'avoir bump le serveur !','\n','[Donnez votre avis sur le serveur discord](https://disboard.org/fr/review/create/1199715873871638620).'].join('')))});
         temps_avant_bump = 121;
+        (s4dmessage.channel).messages.fetch({ limit: 1 }).then(async (last_messages_in_channel) => {
+              (last_messages_in_channel.at(1 - 1)).react('🔔')
+    
+        });
       }
       if (s4d.client.channels.cache.get('1408798931219120269') == (s4dmessage.channel) && 'null' == (String((s4dmessage).embeds[0].description))) {
         s4d.client.channels.cache.get('1374039978404741250').send({content:String((['**Aujourd\'hui, <t:',Math.floor(new Date().getTime()/1000),':D>** :','\n','**',String((s4dmessage).embeds[0].title),'**'].join('')))});
@@ -1146,6 +1162,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1288,12 +1305,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: (['Il est **',((new Date().getHours())) + 2,'**h**',(new Date().getMinutes()),'**.','\n','-# Nous sommes le **',(new Date().getDate()),'**/**',((new Date().getMonth())) + 1,'**/**',(new Date().getFullYear()),'**.'].join('')), ephemeral: false, components: [] });
       }
       if ((interaction.commandName) == 'say' && ((interaction.member).id) == ((s4d.client.users.cache.get(String('746069923465527339'))).id)) {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1436,12 +1455,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: 'Vous n\'avez pas les permission.', ephemeral: true, components: [] });
       }
       if ((interaction.commandName) == 'serveur') {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1584,12 +1605,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: (['### Commande sans permission.','\n','``/report`` - Signaler un message.','\n','``!serveur`` - Obtenez des informations sur le serveur.','\n','``!help`` - Obtenez les commande du bot.','\n','``!date`` - Obtenez l\'heure.','\n','``!ping`` - Obtenez la latence du bot.','\n','### Commande avec les permission administrateur.','\n','``!say`` - Envoyez un message si vous êtes administrateur.','\n','-# Bot créé par **',(s4d.client.users.cache.get(String('746069923465527339'))).username,'**.'].join('')), ephemeral: false, components: [] });
       }
       if ((interaction.commandName) == 'statut') {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1732,12 +1755,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: '[51966 c\'est pas par hasard !](https://animal-crossing.onrender.com/51966)', ephemeral: true, components: [] });
       }
       if ((interaction.commandName) == 'restart' && ((interaction.member).id) == '746069923465527339') {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1829,6 +1854,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //

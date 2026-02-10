@@ -241,56 +241,139 @@
                           </block>
                         </value>
                         <next>
-                          <block type="controls_if" id="_1YO~LaZHe.~F$9:=!50">
+                          <block type="controls_if" id="c+iHl9j*azK!nT,$hy3:">
                             <value name="IF0">
-                              <block type="logic_operation" id="~jLOtjf`nRKX!{=#hy=J">
-                                <field name="OP">OR</field>
+                              <block type="logic_compare" id="w4e7vs9mv;]k;_B9zqap">
+                                <field name="OP">EQ</field>
                                 <value name="A">
-                                  <block type="logic_compare" id="rmpvFNoHo3|+8PB5X[zX">
-                                    <field name="OP">EQ</field>
-                                    <value name="A">
-                                      <block type="variables_get" id="jKQzWi%d#PkOA)hA=c4{">
-                                        <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
-                                      </block>
-                                    </value>
-                                    <value name="B">
-                                      <block type="math_number" id="Al$H)a+T-OaP++~_:!ic">
-                                        <field name="NUM">1</field>
-                                      </block>
-                                    </value>
+                                  <block type="variables_get" id="u9FC1pxGD0k8Xh$KYk_]">
+                                    <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
                                   </block>
                                 </value>
                                 <value name="B">
-                                  <block type="math_number_property" id="n.gOLLFOVw7j34hoFLPi">
-                                    <mutation divisor_input="true"></mutation>
-                                    <field name="PROPERTY">DIVISIBLE_BY</field>
-                                    <value name="NUMBER_TO_CHECK">
-                                      <shadow type="math_number" id="aLte_8]l}5:*_d*F+0%R">
-                                        <field name="NUM">0</field>
-                                      </shadow>
-                                      <block type="frost_current" id="gq27v1]`^7($n-v6vP?p">
-                                        <field name="DATA_TYPE">DATE</field>
-                                      </block>
-                                    </value>
-                                    <value name="DIVISOR">
-                                      <block type="math_number" id="kciW5u6w4{J-GZxsI1w)">
-                                        <field name="NUM">5</field>
-                                      </block>
-                                    </value>
+                                  <block type="math_number" id="5NuAFZ.$=E+@Y#F9P%e7">
+                                    <field name="NUM">1</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
                             <statement name="DO0">
-                              <block type="variables_set" id="W==V^pjvx[K?vbE*lnpp">
-                                <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
-                                <value name="VALUE">
-                                  <block type="math_number" id="7Ci4n`l/F!i[J_(-K]~I">
-                                    <field name="NUM">0</field>
+                              <block type="jg_channel_get_last_messages_in_channel_then" id="y}OI]vM}B@wgV-yejKY!">
+                                <value name="AMOUNT">
+                                  <shadow type="math_number" id="!veyYM*U+a4JQ!xG}LMr">
+                                    <field name="NUM">2</field>
+                                  </shadow>
+                                </value>
+                                <value name="CHANNEL">
+                                  <block type="s4d_get_channel" id="S#fx)t0Io]4ddow5(@6r">
+                                    <field name="SEARCH_TYPE">ID</field>
+                                    <value name="VALUE">
+                                      <block type="jg_text_remake_paragraph_quotes" id="./GDum9NIV^Yz.A%^B.k">
+                                        <field name="TEXT">1456601685760938077</field>
+                                      </block>
+                                    </value>
                                   </block>
                                 </value>
+                                <statement name="STATEMENTS">
+                                  <block type="controls_if" id="Qw(5pO3{{Zd)-ajmNRGH">
+                                    <value name="IF0">
+                                      <block type="logic_compare" id="*trV-|_~KOa$H^1k8WA0">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="jg_text_remake_paragraph_quotes" id="M1pFy_0B+~Jo@,4/!PI9">
+                                            <field name="TEXT">1369648140483039403</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="s4d_member_id" id="J0[cP9{7hRlA$(B=lEZy">
+                                            <value name="MEMBER">
+                                              <block type="jg_messages_value_dropdown_content_of_message" id="j6)/7+5_@Uoh_rq]arPy">
+                                                <field name="TYPE">author</field>
+                                                <value name="MSG">
+                                                  <block type="jg_channel_last_message_number" id="JA}z-ogrxmz{9~[3heK_">
+                                                    <value name="INDEX">
+                                                      <shadow type="math_number" id="6*dCf;E]9rSqi%-W=UV8">
+                                                        <field name="NUM">2</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="jg_messages_delete_message" id="-V6zNw~}8Dh,.MoP6834">
+                                        <value name="MESSAGE">
+                                          <block type="jg_channel_last_message_number" id="!=G_RHGYTc7.2a,y!mb!">
+                                            <value name="INDEX">
+                                              <shadow type="math_number" id="[}LwVzUcKKJq/.q)~D;Y">
+                                                <field name="NUM">2</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </statement>
                               </block>
                             </statement>
+                            <next>
+                              <block type="controls_if" id="_1YO~LaZHe.~F$9:=!50">
+                                <value name="IF0">
+                                  <block type="logic_operation" id="~jLOtjf`nRKX!{=#hy=J">
+                                    <field name="OP">OR</field>
+                                    <value name="A">
+                                      <block type="logic_compare" id="rmpvFNoHo3|+8PB5X[zX">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="jKQzWi%d#PkOA)hA=c4{">
+                                            <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="Al$H)a+T-OaP++~_:!ic">
+                                            <field name="NUM">2</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number_property" id="n.gOLLFOVw7j34hoFLPi">
+                                        <mutation divisor_input="true"></mutation>
+                                        <field name="PROPERTY">DIVISIBLE_BY</field>
+                                        <value name="NUMBER_TO_CHECK">
+                                          <shadow type="math_number" id="aLte_8]l}5:*_d*F+0%R">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                          <block type="frost_current" id="gq27v1]`^7($n-v6vP?p">
+                                            <field name="DATA_TYPE">DATE</field>
+                                          </block>
+                                        </value>
+                                        <value name="DIVISOR">
+                                          <block type="math_number" id="kciW5u6w4{J-GZxsI1w)">
+                                            <field name="NUM">5</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="variables_set" id="W==V^pjvx[K?vbE*lnpp">
+                                    <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
+                                    <value name="VALUE">
+                                      <block type="math_number" id="7Ci4n`l/F!i[J_(-K]~I">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
                           </block>
                         </next>
                       </block>
@@ -304,7 +387,7 @@
       </block>
     </statement>
   </block>
-  <block type="s4d_on_react_added" id="$t!L00|.5j9L1~2xJ#~o" x="-4339" y="-3070">
+  <block type="s4d_on_react_added" id="$t!L00|.5j9L1~2xJ#~o" x="-4378" y="-3094">
     <statement name="STATEMENTS">
       <block type="controls_if" id="lw:P{t0Qr]Wr@8)v,a{Q">
         <value name="IF0">
@@ -333,6 +416,68 @@
             </value>
           </block>
         </statement>
+        <next>
+          <block type="controls_if" id="0tER4(Jb=W(_/jM;x4r*">
+            <value name="IF0">
+              <block type="logic_operation" id="imuT#7Xp.kSYpmtABu#^">
+                <field name="OP">AND</field>
+                <value name="A">
+                  <block type="logic_compare" id="J|j8QJz]9NV#wV?bOH{u">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="s4d_react_emoji" id="~j(8;.%)?R![Hgqd#,N|"></block>
+                    </value>
+                    <value name="B">
+                      <block type="jg_text_remake_paragraph_quotes" id="jIh.UZA2n$f266kk]F)a">
+                        <field name="TEXT">🔔</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id="(2GPvs7;f/5h5hYTUP++">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="s4d_channel_id" id="L.J_O{+T[.)%vgM?U1Pz">
+                        <value name="CHANNEL">
+                          <block type="reaction_channel" id="#RUaP1%+N|TsR{/tNnai"></block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="jg_text_remake_paragraph_quotes" id="yXa5.vn4!E(p`d[Ai,i!">
+                        <field name="TEXT">1199727716023414794</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="s4d_add_role" id="t.l1`uCiMxDpQ7PW`AfU">
+                <value name="ROLE">
+                  <block type="s4d_get_role" id=".?2m@)XxO(5gUo7cf~*{">
+                    <field name="SEARCH_TYPE">ID</field>
+                    <value name="VALUE">
+                      <block type="jg_text_remake_paragraph_quotes" id="+Ewm2.RK8iKPL47RTD_;">
+                        <field name="TEXT">1451864854221815908</field>
+                      </block>
+                    </value>
+                    <value name="SERVER">
+                      <block type="variables_get" id="5S_;p+p[FvbyjMKl*+F+">
+                        <field name="VAR" id="QzK8w8zE)!P[I[Fn~9+|">id serveur</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="MEMBER">
+                  <shadow type="s4d_message_member" id="|Y^gJ?*l}=h@#(T~QZm7"></shadow>
+                  <block type="s4d_react_member" id="cM11%|uPvP:2In1m_xAo"></block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
       </block>
     </statement>
   </block>
@@ -1345,8 +1490,21 @@
         <next>
           <block type="s4d_send_channel" id="hwVQmNTn5hSXv#}god!Q">
             <value name="CONTENT">
-              <block type="jg_text_remake_paragraph_quotes" id=",G:Sdo14*XgvkL5;wNyl">
-                <field name="TEXT">C'est l'heure de l'&lt;@&amp;1456604350536220745&gt; !</field>
+              <block type="text_join" id="d$6Za4U`Q]vR0-leN$`s">
+                <mutation items="3"></mutation>
+                <value name="ADD0">
+                  <block type="jg_text_remake_paragraph_quotes" id=",G:Sdo14*XgvkL5;wNyl">
+                    <field name="TEXT">C'est l'heure de l'&lt;@&amp;1456604350536220745&gt; !</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="s4d_newline" id="LNC#[feZ:_:IKUYLE/)v"></block>
+                </value>
+                <value name="ADD2">
+                  <block type="jg_text_remake_paragraph_quotes" id="I{m9?YW|4!q5b+8D|{ca">
+                    <field name="TEXT">-# Plus d'information : https://discord.com/channels/1199715873871638620/1456601685760938077/1456625725670162605.</field>
+                  </block>
+                </value>
               </block>
             </value>
             <value name="CHANNEL">
@@ -1547,7 +1705,7 @@
                                                                                             <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
                                                                                             <value name="VALUE">
                                                                                               <block type="math_number" id="6BLbOWg0zTc!xZA}Ts5D">
-                                                                                                <field name="NUM">1</field>
+                                                                                                <field name="NUM">2</field>
                                                                                               </block>
                                                                                             </value>
                                                                                             <next>
@@ -2951,6 +3109,16 @@
                                             </statement>
                                           </block>
                                         </statement>
+                                        <next>
+                                          <block type="variables_set" id="`11,uk*4EE7/s^L7,[lX">
+                                            <field name="VAR" id=")0]MUf4=/VR7SND/6os;">anecdote 1</field>
+                                            <value name="VALUE">
+                                              <block type="math_number" id="D.6z7/2@o*dzKz,MwZ$m">
+                                                <field name="NUM">2</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
                                       </block>
                                     </next>
                                   </block>
@@ -3091,6 +3259,36 @@
                                 <field name="NUM">121</field>
                               </block>
                             </value>
+                            <next>
+                              <block type="jg_channel_get_last_messages_in_channel_then" id="lb8Ly6NU9{T~6vY5G-wi">
+                                <value name="AMOUNT">
+                                  <shadow type="math_number" id="qe0+ErPt,Y5ziI?y8{Sy">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                                <value name="CHANNEL">
+                                  <block type="s4d_message_channel" id="eA%Ll`SUr4%cz}@mj4p*"></block>
+                                </value>
+                                <statement name="STATEMENTS">
+                                  <block type="jg_messages_react_to_message_with_reaction" id="j,Up;o(|:6,~K{G/Gzy)">
+                                    <value name="MESSAGE">
+                                      <block type="jg_channel_last_message_number" id=",BDgd:QD8Z:=luu8?.q1">
+                                        <value name="INDEX">
+                                          <shadow type="math_number" id="ojBNe{SJ-5o5V4?GTfRr">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="REACTION">
+                                      <shadow type="text" id="HW:B%rUed+=HZm(@GVN!">
+                                        <field name="TEXT">🔔</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
                           </block>
                         </next>
                       </block>
@@ -3648,6 +3846,7 @@ false - everyone can see it
                 
                 
                 
+                
                 </comment>
               </block>
             </value>
@@ -3838,6 +4037,7 @@ false - everyone can see it
                     
                     
                     
+                    
                     </comment>
                   </block>
                 </value>
@@ -3938,6 +4138,7 @@ false - everyone can see it
                 
                 
                     
+                        
                         
                         
                         
@@ -4117,6 +4318,7 @@ false - everyone can see it
                         
                         
                         
+                        
                         </comment>
                       </block>
                     </value>
@@ -4263,6 +4465,7 @@ false - everyone can see it
                     
                     
                         
+                            
                             
                             
                             
@@ -4483,6 +4686,7 @@ false - everyone can see it
                                 
                                 
                                 
+                                
                                 </comment>
                               </block>
                             </value>
@@ -4584,6 +4788,7 @@ false - everyone can see it
                                     
                                     
                                     
+                                    
                                     </comment>
                                   </block>
                                 </value>
@@ -4653,6 +4858,7 @@ false - everyone can see it
                                 
                                 
                                     
+                                        
                                         
                                         
                                         
@@ -4809,6 +5015,7 @@ false - everyone can see it
                                                         
                                                         
                                                         
+                                            
                                             </comment>
                                           </block>
                                         </value>
@@ -4980,6 +5187,7 @@ false - everyone can see it
                                                         
                                                         
                                                         
+                                            
                                             </comment>
                                           </block>
                                         </value>
