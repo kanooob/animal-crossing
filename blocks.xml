@@ -3847,6 +3847,7 @@ false - everyone can see it
                 
                 
                 
+                
                 </comment>
               </block>
             </value>
@@ -4038,6 +4039,7 @@ false - everyone can see it
                     
                     
                     
+                    
                     </comment>
                   </block>
                 </value>
@@ -4138,6 +4140,7 @@ false - everyone can see it
                 
                 
                     
+                        
                         
                         
                         
@@ -4319,6 +4322,7 @@ false - everyone can see it
                         
                         
                         
+                        
                         </comment>
                       </block>
                     </value>
@@ -4465,6 +4469,7 @@ false - everyone can see it
                     
                     
                         
+                            
                             
                             
                             
@@ -4687,6 +4692,7 @@ false - everyone can see it
                                 
                                 
                                 
+                                
                                 </comment>
                               </block>
                             </value>
@@ -4789,6 +4795,7 @@ false - everyone can see it
                                     
                                     
                                     
+                                    
                                     </comment>
                                   </block>
                                 </value>
@@ -4858,6 +4865,7 @@ false - everyone can see it
                                 
                                 
                                     
+                                        
                                         
                                         
                                         
@@ -5015,6 +5023,7 @@ false - everyone can see it
                                                         
                                                         
                                                         
+                                            
                                             
                                             </comment>
                                           </block>
@@ -5187,6 +5196,7 @@ false - everyone can see it
                                                         
                                                         
                                                         
+                                            
                                             
                                             </comment>
                                           </block>
@@ -6111,21 +6121,37 @@ false - everyone can see it
       </block>
     </statement>
   </block>
-  <block type="s4d_on_deleted" id=")3j^6vMhtrSHbXuy#;7N" x="-659" y="1148">
+  <block type="s4d_on_deleted" id=")3j^6vMhtrSHbXuy#;7N" x="-842" y="1139">
     <statement name="STATEMENTS">
       <block type="controls_if" id="/4G=yM75!Mn}MnnvTn`4">
         <value name="IF0">
-          <block type="logic_compare" id="Z`+YmD8~Wt]!P5(5/CHo">
-            <field name="OP">NEQ</field>
+          <block type="logic_operation" id="%OexSC]X-gn#~!/rG%G}">
+            <field name="OP">AND</field>
             <value name="A">
-              <block type="jg_text_remake_paragraph_quotes" id="}^z?OKO?7Qa.H[%/3l0*">
-                <field name="TEXT">302050872383242240</field>
+              <block type="logic_compare" id="Z`+YmD8~Wt]!P5(5/CHo">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="jg_text_remake_paragraph_quotes" id="}^z?OKO?7Qa.H[%/3l0*">
+                    <field name="TEXT">302050872383242240</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="s4d_member_id" id="UD[$#dUH-t@[`mU?W0CN">
+                    <value name="MEMBER">
+                      <block type="s4d_message_author_deleted" id="Awb#{XS%orKv`=MCj/%|"></block>
+                    </value>
+                  </block>
+                </value>
               </block>
             </value>
             <value name="B">
-              <block type="s4d_member_id" id="UD[$#dUH-t@[`mU?W0CN">
-                <value name="MEMBER">
-                  <block type="s4d_message_author_deleted" id="Awb#{XS%orKv`=MCj/%|"></block>
+              <block type="logic_compare" id="E!=P%}uh9D6.n7~NA-0B">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="s4d_message_content_deleted" id="M47[l`I9(Zw,]+$8p%XS"></block>
+                </value>
+                <value name="B">
+                  <block type="s4d_message_content_deleted" id="+OJ=6K5T^9p.m6D`CIDx"></block>
                 </value>
               </block>
             </value>
@@ -6190,7 +6216,7 @@ false - everyone can see it
       </block>
     </statement>
   </block>
-  <block type="on_channelCreate" id="!4MFim0Y2loJAN6pR8U1" x="148" y="1227">
+  <block type="on_channelCreate" id="!4MFim0Y2loJAN6pR8U1" x="157" y="1268">
     <statement name="STATEMENTS">
       <block type="channel_perms" id="3SrSp;pa]/yOnZ5+~=Fh">
         <field name="ad">false</field>

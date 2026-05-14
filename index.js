@@ -1231,12 +1231,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: (['Pong 🏓','\n','-# Ma latence est de **',s4d.client.ws.ping,'**ms. Le bot est en ligne depuis **',temps_on_beau,'**.'].join('')), ephemeral: false, components: [] });
       }
       if ((interaction.commandName) == 'heures') {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1381,12 +1383,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: 'Message envoyé.', ephemeral: true, components: [] });
         (interaction.channel).send({content:String((interaction.options.getString('message')))});
       } else if ((interaction.commandName) == 'say' && ((interaction.member).id) != ((s4d.client.users.cache.get(String('746069923465527339'))).id)) {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1531,12 +1535,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: (['Le serveur **',(interaction.guild).name,'** créé par **',(s4d.client.users.cache.get(String((String((interaction.guild).ownerId))))).username,'** à **',(interaction.guild).memberCount,'** membres.','\n','-# Le serveur a était créé <t:',Math.floor(((interaction.guild).createdAt).getTime()/1000),':R>.'].join('')), ephemeral: false, components: [] });
       }
       if ((interaction.commandName) == 'help') {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1681,6 +1687,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: '[Ma page de statut](https://animal-crossing.onrender.com/statut).', ephemeral: false, components: [] });
       }
       if ((interaction.commandName) == '51966') {
@@ -1756,12 +1763,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: '[51966 c\'est pas par hasard !](https://animal-crossing.onrender.com/51966)', ephemeral: true, components: [] });
       }
       if ((interaction.commandName) == 'restart' && ((interaction.member).id) == '746069923465527339') {
         // true - only the person who t=did the comamnd can see it
         //
         // false - everyone can see it
+        //
         //
         //
         //
@@ -1923,6 +1932,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         //
         //
         //
+        //
         await interaction.reply({ content: 'Hop hop hop ! Redémarre pas mon bot, stp.', ephemeral: true, components: [] });
       }
     
@@ -1992,7 +2002,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     });
     
     s4d.client.on('messageDelete', async (s4dmessage) => {
-      if ('302050872383242240' != ((s4dmessage.member.user).id)) {
+      if ('302050872383242240' != ((s4dmessage.member.user).id) && (s4dmessage.content) != (s4dmessage.content)) {
         s4d.client.channels.cache.get(id_salon_log).send({content:String((['Le message de **',(s4dmessage.member.user).username,'** à été supprimer, son message :`',s4dmessage.content,'` dans le salon <#',(s4dmessage.channel).id,'>.'].join('')))});
       }
     
